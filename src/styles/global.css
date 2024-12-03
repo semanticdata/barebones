@@ -42,4 +42,16 @@
     );
     padding: 2px 7px !important;
   }
+
+  blockquote {
+    border-inline-start: solid 0.2rem;
+    border-inline-start-color: light-dark(
+      rgb(var(--light-mode-foreground-muted)),
+      rgb(var(--dark-mode-foreground-muted))
+    ) !important;
+  }
+
+  /* kbd:has(kbd) {
+    box-shadow: none !important;
+  } */
 }
