@@ -20,4 +20,26 @@
       rgb(var(--dark-mode-background))
     );
   }
+
+  table {
+    @apply border-collapse;
+  }
+
+  table thead th,
+  table tfoot th {
+    background-color: light-dark(
+      rgb(var(--dark-mode-foreground-muted)),
+      rgb(var(--light-mode-foreground-muted))
+    );
+  }
+
+  table th,
+  table td {
+    border: 1px solid;
+    border-color: light-dark(
+      rgb(var(--light-mode-foreground-muted)),
+      rgb(var(--dark-mode-foreground-muted))
+    );
+    padding: 2px 7px !important;
+  }
 }
