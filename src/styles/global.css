@@ -15,10 +15,8 @@
   }
 
   body {
-    background-color: light-dark(
-      rgb(var(--light-mode-background)),
-      rgb(var(--dark-mode-background))
-    );
+    background-color: light-dark(rgb(var(--light-mode-background)),
+        rgb(var(--dark-mode-background)));
   }
 
   table {
@@ -27,28 +25,22 @@
 
   table thead th,
   table tfoot th {
-    background-color: light-dark(
-      rgb(var(--dark-mode-foreground-muted)),
-      rgb(var(--light-mode-foreground-muted))
-    );
+    background-color: light-dark(rgb(var(--dark-mode-foreground-muted)),
+        rgb(var(--light-mode-foreground-muted)));
   }
 
   table th,
   table td {
     border: 1px solid;
-    border-color: light-dark(
-      rgb(var(--light-mode-foreground-muted)),
-      rgb(var(--dark-mode-foreground-muted))
-    );
+    border-color: light-dark(rgb(var(--light-mode-foreground-muted)),
+        rgb(var(--dark-mode-foreground-muted)));
     padding: 2px 7px !important;
   }
 
   blockquote {
     border-inline-start: solid 0.2rem;
-    border-inline-start-color: light-dark(
-      rgb(var(--light-mode-foreground-muted)),
-      rgb(var(--dark-mode-foreground-muted))
-    ) !important;
+    border-inline-start-color: light-dark(rgb(var(--light-mode-foreground-muted)),
+        rgb(var(--dark-mode-foreground-muted))) !important;
   }
 
   /* kbd:has(kbd) {
@@ -57,5 +49,22 @@
 
   .border {
     border: 1px solid;
+  }
+
+  .animate {
+    @apply -translate-y-3 opacity-0;
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .animate.show {
+    @apply translate-y-0 opacity-100;
+  }
+
+  html #back-to-top {
+    @apply pointer-events-none opacity-0;
+  }
+
+  html.scrolled #back-to-top {
+    @apply pointer-events-auto opacity-100;
   }
 }
