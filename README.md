@@ -48,11 +48,12 @@ If you're interested in predesigned [websites built with Barebones](https://supe
 
 ## Changes from Upstream
 
-- Back to Top Button
+- Back to Top button
 - Animate (sections)
 - Style Blockquotes
 - Style Tables
 - Style Navigation
-- More posts / More projects Buttons
+- More posts / More projects buttons
 - 404 Page
 - Link/Button component
+- Table of Contents component

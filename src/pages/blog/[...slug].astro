@@ -8,6 +8,8 @@ import SeoPost from "@/components/SeoPost.astro";
 
 import { formatDate } from "@/lib/util";
 
+import TableOfContents from "@/components/TableOfContents.astro";
+
 interface Props {
   entry: CollectionEntry<"blog">;
 }
@@ -21,7 +23,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content, headings } = await entry.render();
 ---
 
 <BaseLayout>
@@ -41,6 +43,9 @@ const { Content } = await entry.render();
       {formatDate(entry.data.publicationDate)}
     </p>
     <hr class="mt-3 mb-6 animate" />
+
+    <TableOfContents headings={headings} />
+
     <div class="mx-auto dark:prose-invert animate content prose">
       <Content />
     </div>
