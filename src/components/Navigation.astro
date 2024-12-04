@@ -2,15 +2,18 @@
 import { NAV_LINKS, SITE, SOCIAL_LINKS } from "@/siteConfig.ts";
 ---
 
-<header class="flex flex-wrap items-center justify-between pb-8">
-  <a href="/" class="text-lg font-semibold sm:text-xl">{SITE.title}</a>
+<header class="flex flex-wrap justify-between items-center pb-8">
+  <a href="/" class="mb-2 font-semibold text-lg sm:text-xl">{SITE.title}</a>
   <nav>
-    <ul class="flex list-none items-center gap-2 p-0 sm:gap-3">
+    <ul class="flex items-center gap-2 sm:gap-3 mb-2 p-0 list-none">
       {
         Object.keys(NAV_LINKS).map((navItemKey) => {
           return (
             <li>
-              <a href={NAV_LINKS[navItemKey].path}>
+              <a
+                href={NAV_LINKS[navItemKey].path}
+                class="hover:bg-slate-700 shadow-sm mt-4 px-2 py-1 border rounded-md focus:ring focus:ring-slate-500 focus:ring-offset-2 font-medium text-sm focus:text-white no-underline transition-colors duration-150 focus:outline-none"
+              >
                 {NAV_LINKS[navItemKey].label}
               </a>
             </li>
