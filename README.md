@@ -2,13 +2,13 @@
 
 ![barebones-cover](https://github.com/user-attachments/assets/bde6d3af-472f-4320-96ec-b70040098ea9)
 
-[View demo](https://barebones.superwebthemes.com/)
+[View demo](https://barebones-phi.vercel.app/)
 
 Welcome to Barebones, an open source template for [Astro](https://astro.build/) designed for simplicity and flexibility. Whether you're a seasoned developer or just starting out, Barebones provides everything you need to kickstart your next blog with minimal setup.
 
-Head over to the [repository](https://github.com/superwebthemes/barebones) and check out our [documentation](https://barebones.superwebthemes.com) to get started.
+Head over to the [repository](https://github.com/semanticdata/barebones) and check out our [documentation](https://barebones-phi.vercel.app/) to get started.
 
-## Key features
+## Key Features
 
 - **Batteries included:** Get started immediately with a ready-to-use setup. Start writing right away, no extensive configuration required.
 - **Fast by default:** Leverage the power of Astro, Tailwind CSS, and Markdown to create fast, lightweight web pages.
@@ -20,12 +20,9 @@ Head over to the [repository](https://github.com/superwebthemes/barebones) and c
 
 ## Core Web Vitals
 
-Performance: **100**
-
-Accessibility: **100**
-
-Best Practices: **100**
-
+Performance: **100**  
+Accessibility: **100**  
+Best Practices: **100**  
 SEO: **100**
 
 ## Commands
