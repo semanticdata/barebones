@@ -54,3 +54,4 @@ If you're interested in predesigned [websites built with Barebones](https://supe
 - Style Tables
 - Style Navigation
 - More posts / More projects Buttons
+- 404 Page
