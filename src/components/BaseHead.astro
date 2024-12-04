@@ -30,5 +30,46 @@ import Favicons from "@/components/Favicons.astro";
   <ViewTransitions />
   <Favicons />
 
+  <script is:inline>
+    function init() {
+      onScroll();
+      animate();
+
+      const backToTop = document.getElementById("back-to-top");
+      backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+      document.addEventListener("scroll", onScroll);
+    }
+
+    function animate() {
+      const animateElements = document.querySelectorAll(".animate");
+
+      animateElements.forEach((element, index) => {
+        setTimeout(() => {
+          element.classList.add("show");
+        }, index * 100);
+      });
+    }
+
+    function onScroll() {
+      if (window.scrollY > 0) {
+        document.documentElement.classList.add("scrolled");
+      } else {
+        document.documentElement.classList.remove("scrolled");
+      }
+    }
+
+    function scrollToTop(event) {
+      event.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => init());
+    document.addEventListener("astro:after-swap", () => init());
+  </script>
+
   <slot />
 </head>
