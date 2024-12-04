@@ -8,18 +8,20 @@ import SeoPage from "@/components/SeoPage.astro";
 
 <BaseLayout>
   <SeoPage slot="head" title="Contact" />
-  <h2 class="mb-3 text-lg font-bold">Contact</h2>
-  <ul class="grid list-none gap-2 p-0">
-    {
-      Object.keys(SOCIAL_LINKS).map((socialLinkKey) => {
-        return (
-          <li>
-            <a href={SOCIAL_LINKS[socialLinkKey].url}>
-              {SOCIAL_LINKS[socialLinkKey].label}
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
+  <h2 class="mb-3 font-bold text-xl animate">Contact</h2>
+  <section class="animate">
+    <ul class="gap-2 grid p-0 list-none">
+      {
+        Object.keys(SOCIAL_LINKS).map((socialLinkKey) => {
+          return (
+            <li class="animate">
+              <a href={SOCIAL_LINKS[socialLinkKey].url}>
+                {SOCIAL_LINKS[socialLinkKey].label}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
 </BaseLayout>
