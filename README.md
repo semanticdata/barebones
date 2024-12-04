@@ -45,3 +45,12 @@ Read the [documentation for Barebones](https://docs.superwebthemes.com), join ou
 ## Styled examples
 
 If you're interested in predesigned [websites built with Barebones](https://superwebthemes.com), check out **SuperWeb Themes** — a variety of expertly designed Barebones examples by us.
+
+## Changes from Upstream
+
+- Back to Top Button
+- Animate (sections)
+- Style Blockquotes
+- Style Tables
+- Style Navigation
+- More posts / More projects Buttons
