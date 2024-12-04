@@ -8,6 +8,8 @@ import Post from "@/components/Post.astro";
 import Project from "@/components/Project.astro";
 import SeoPage from "@/components/SeoPage.astro";
 
+import Link from "@/components/Link.astro";
+
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf()
 );
@@ -23,23 +25,15 @@ const projects = await getCollection("projects");
 
     <section class="animate">
       <h2 class="mb-3 font-bold text-lg">Blog posts</h2>
-      <ul class="gap-2 grid p-0 list-none">
+      <ul class="gap-2 grid mb-4 p-0 list-none">
         {posts.slice(0, 5).map((post) => <Post post={post} />)}
       </ul>
-      <a
-        href="/blog"
-        class="inline-flex items-center bg-transparent hover:bg-slate-700 shadow-sm mt-4 px-2 py-1 border rounded-md focus:ring focus:ring-slate-500 focus:ring-offset-2 font-medium text-sm focus:text-white no-underline transition-colors duration-150 focus:outline-none"
-        >More posts</a
-      >
+      <Link href="/blog">More posts</Link>
       <h2 class="mt-8 mb-3 font-bold text-lg">Projects</h2>
-      <ul class="gap-2 grid p-0 list-none">
+      <ul class="gap-2 grid mb-4 p-0 list-none">
         {projects.slice(0, 5).map((project) => <Project project={project} />)}
       </ul>
-      <a
-        href="/projects"
-        class="inline-flex items-center bg-transparent hover:bg-slate-700 shadow-sm mt-4 px-2 py-1 border rounded-md focus:ring focus:ring-slate-500 focus:ring-offset-2 font-medium text-sm focus:text-white no-underline transition-colors duration-150 focus:outline-none"
-        >More projects</a
-      >
+      <Link href="/projects">More projects</Link>
     </section>
   </main>
 </BaseLayout>

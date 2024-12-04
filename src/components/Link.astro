@@ -1,0 +1,31 @@
+---
+type Props = {
+  href: string;
+  external?: boolean;
+  underline?: boolean;
+  group?: boolean;
+};
+
+const {
+  href,
+  external,
+  underline = true,
+  group = false,
+  ...rest
+} = Astro.props;
+
+const baseClasses = "hover:bg-slate-700 shadow-sm mt-4 px-2 py-1 border rounded-md focus:ring focus:ring-slate-500 focus:ring-offset-2 font-medium text-sm focus:text-white no-underline transition-colors duration-150 focus:outline-none";
+const underlineClass = underline ? "underline underline-offset-[3px]" : "";
+const groupClass = group ? "group" : "";
+
+const combinedClasses = `${baseClasses} ${underlineClass} ${groupClass}`.trim();
+---
+
+<a
+  href={href}
+  target={external ? "_blank" : "_self"}
+  class={combinedClasses}
+  {...rest}
+>
+  <slot />
+</a>

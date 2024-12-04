@@ -55,3 +55,4 @@ If you're interested in predesigned [websites built with Barebones](https://supe
 - Style Navigation
 - More posts / More projects Buttons
 - 404 Page
+- Link/Button component

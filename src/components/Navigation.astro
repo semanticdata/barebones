@@ -1,5 +1,7 @@
 ---
 import { NAV_LINKS, SITE, SOCIAL_LINKS } from "@/siteConfig.ts";
+
+import Link from "./Link.astro";
 ---
 
 <header class="flex flex-wrap justify-between items-center pb-8">
@@ -10,12 +12,9 @@ import { NAV_LINKS, SITE, SOCIAL_LINKS } from "@/siteConfig.ts";
         Object.keys(NAV_LINKS).map((navItemKey) => {
           return (
             <li>
-              <a
-                href={NAV_LINKS[navItemKey].path}
-                class="hover:bg-slate-700 shadow-sm mt-4 px-2 py-1 border rounded-md focus:ring focus:ring-slate-500 focus:ring-offset-2 font-medium text-sm focus:text-white no-underline transition-colors duration-150 focus:outline-none"
-              >
+              <Link href={NAV_LINKS[navItemKey].path}>
                 {NAV_LINKS[navItemKey].label}
-              </a>
+              </Link>
             </li>
           );
         })
