@@ -5,7 +5,7 @@ import type {
 } from "@/types.ts";
 
 export const SITE: SiteConfiguration = {
-  title: "Barebones",
+  title: "Miguel Pimentel",
   description:
     "A barebones starter theme. Built with Astro, Tailwind CSS, and Markdown.",
   url: "https://barebones-phi.vercel.app/",
