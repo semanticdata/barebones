@@ -2,8 +2,12 @@
 import { SOCIAL_LINKS } from "@/siteConfig";
 
 import BaseLayout from "@/layouts/BaseLayout.astro";
-
 import SeoPage from "@/components/SeoPage.astro";
+
+const socialLinksArray = Object.keys(SOCIAL_LINKS).map((key) => ({
+  url: SOCIAL_LINKS[key].url,
+  label: SOCIAL_LINKS[key].label,
+}));
 ---
 
 <BaseLayout>
@@ -12,15 +16,19 @@ import SeoPage from "@/components/SeoPage.astro";
   <section class="animate">
     <ul class="gap-2 grid p-0 list-none">
       {
-        Object.keys(SOCIAL_LINKS).map((socialLinkKey) => {
-          return (
-            <li class="animate">
-              <a href={SOCIAL_LINKS[socialLinkKey].url}>
-                {SOCIAL_LINKS[socialLinkKey].label}
-              </a>
-            </li>
-          );
-        })
+        socialLinksArray.map((link) => (
+          <li class="animate">
+            <a
+              href={link.url}
+              target={link.url.startsWith("http") ? "_blank" : undefined}
+              rel={
+                link.url.startsWith("http") ? "noopener noreferrer" : undefined
+              }
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
       }
     </ul>
   </section>
