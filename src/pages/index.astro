@@ -26,7 +26,7 @@ const projects = await getCollection("projects");
     <section class="animate">
       <h2 class="mb-3 font-bold text-lg">Blog posts</h2>
       <ul class="gap-2 grid mb-4 p-0 list-none">
-        {posts.slice(0, 5).map((post) => <Post post={post} />)}
+        {posts.slice(0, 8).map((post) => <Post post={post} />)}
       </ul>
       <Link href="/blog">More posts</Link>
       <h2 class="mt-8 mb-3 font-bold text-lg">Projects</h2>
