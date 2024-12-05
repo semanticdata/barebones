@@ -67,4 +67,8 @@
   html.scrolled #back-to-top {
     @apply pointer-events-auto opacity-100;
   }
+
+  a {
+    @apply text-purple-700 hover:text-purple-400;
+  }
 }
