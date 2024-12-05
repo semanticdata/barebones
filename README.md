@@ -48,12 +48,11 @@ If you're interested in predesigned [websites built with Barebones](https://supe
 
 ## Changes from Upstream
 
-- Back to Top button
-- Animate (sections)
-- Style Blockquotes
-- Style Tables
-- Style Navigation
-- More posts / More projects buttons
-- 404 Page
-- Link/Button component
-- Table of Contents component
+- [Back to Top button](./src/components/BackToTop.astro)
+- [Animate (sections)](https://github.com/semanticdata/barebones/blob/9909528645b8d53df36e62be1ff38ff53ba8fed7/src/components/BaseHead.astro#L44C1-L52C6)
+- [Style Blockquotes](https://github.com/semanticdata/barebones/blob/9909528645b8d53df36e62be1ff38ff53ba8fed7/src/styles/global.css#L40C1-L44C4)
+- [Style Tables](https://github.com/semanticdata/barebones/blob/9909528645b8d53df36e62be1ff38ff53ba8fed7/src/styles/global.css#L22C1-L38C4)
+- [Style Tables (test link)](./src/styles/global.css#L22C1-L38C4)
+- [404 Page](./src/pages/404.astro)
+- [Link/Button component](./src/components/Link.astro)
+- [Table of Contents component](./src/components/TableOfContents.astro)
