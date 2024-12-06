@@ -30,6 +30,10 @@ export const NAV_LINKS: NavigationLinks = {
     path: "/contact",
     label: "Contact",
   },
+  rss: {
+    path: "/rss.xml",
+    label: "RSS",
+  },
 };
 
 export const SOCIAL_LINKS: SocialLinks = {
