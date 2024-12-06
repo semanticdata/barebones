@@ -9,9 +9,10 @@ import Project from "@/components/Project.astro";
 import SeoPage from "@/components/SeoPage.astro";
 
 import Link from "@/components/Link.astro";
+import Footer from "@/components/Footer.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf()
+  (a, b) => b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf(),
 );
 
 const projects = await getCollection("projects");
@@ -21,19 +22,20 @@ const projects = await getCollection("projects");
   <SeoPage slot="head" />
   <main>
     <Introduction />
-    <hr class="border-[0.5px] my-8 animate" />
+    <hr class="animate my-8 border-[0.5px]" />
 
-    <section class="animate">
-      <h2 class="mb-3 font-bold text-lg">Blog posts</h2>
-      <ul class="gap-2 grid mb-4 p-0 list-none">
+    <section class="animate mb-8">
+      <h2 class="mb-3 text-lg font-bold">Blog posts</h2>
+      <ul class="mb-4 grid list-none gap-2 p-0">
         {posts.slice(0, 8).map((post) => <Post post={post} />)}
       </ul>
       <Link href="/blog">More posts</Link>
-      <h2 class="mt-8 mb-3 font-bold text-lg">Projects</h2>
-      <ul class="gap-2 grid mb-4 p-0 list-none">
+      <h2 class="mb-3 mt-8 text-lg font-bold">Projects</h2>
+      <ul class="mb-4 grid list-none gap-2 p-0">
         {projects.slice(0, 5).map((project) => <Project project={project} />)}
       </ul>
       <Link href="/projects">More projects</Link>
     </section>
+    <Footer />
   </main>
 </BaseLayout>

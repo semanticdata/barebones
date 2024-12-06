@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    color-scheme: light dark;
+    /* color-scheme: light dark; */
 
     --light-mode-background: 240 240 240;
     --light-mode-foreground: 0 0 0;
@@ -12,6 +12,16 @@
     --dark-mode-background: 10 10 10;
     --dark-mode-foreground: 255 255 255;
     --dark-mode-foreground-muted: 205 205 205;
+  }
+
+  html {
+    overflow-y: auto;
+    color-scheme: light;
+    scroll-padding-top: 100px;
+  }
+
+  html.dark {
+    color-scheme: dark;
   }
 
   body {

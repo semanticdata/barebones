@@ -9,6 +9,7 @@ import SeoPost from "@/components/SeoPost.astro";
 import { formatDate } from "@/lib/util";
 
 import TableOfContents from "@/components/TableOfContents.astro";
+import Footer from "@/components/Footer.astro";
 
 interface Props {
   entry: CollectionEntry<"blog">;
@@ -50,4 +51,6 @@ const { Content, headings } = await entry.render();
       <Content />
     </div>
   </div>
+
+  <Footer />
 </BaseLayout>
