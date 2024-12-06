@@ -3,14 +3,14 @@ import { NAV_LINKS, SITE } from "@/siteConfig.ts";
 import Link from "./Link.astro";
 ---
 
-<header class="flex flex-wrap justify-between items-center pb-8">
+<header class="flex flex-col items-start pb-8">
   <a
     href="/"
-    class="hover:bg-purple-900 shadow-sm my-4 px-2 py-1 border rounded-md focus:ring focus:ring-purple-900 dark:focus:ring-purple-900 focus:ring-offset-2 font-medium text-black text-sm hover:text-white dark:hover:text-purple-100 focus:text-white dark:focus:text-purple-100 focus:text-black dark:text-white no-underline transition-colors duration-150 focus:outline-none"
+    class="my-4 rounded-md border px-2 py-1 text-sm font-medium text-black no-underline shadow-sm transition-colors duration-150 hover:bg-purple-900 hover:text-white focus:text-black focus:outline-none focus:ring focus:ring-purple-900 focus:ring-offset-2 dark:text-white dark:hover:text-purple-100 dark:focus:text-purple-100 dark:focus:ring-purple-900"
     >{SITE.title}</a
   >
   <nav>
-    <ul class="flex items-center gap-2 p-0 list-none">
+    <ul class="flex list-none gap-2 p-0">
       {
         Object.keys(NAV_LINKS).map((navItemKey) => {
           return (
