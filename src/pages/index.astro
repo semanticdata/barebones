@@ -5,7 +5,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import Introduction from "@/components/Introduction.astro";
 import Post from "@/components/Post.astro";
-import Project from "@/components/Project.astro";
+// import Project from "@/components/Project.astro";
 import SeoPage from "@/components/SeoPage.astro";
 
 import Link from "@/components/Link.astro";
@@ -22,19 +22,19 @@ const projects = await getCollection("projects");
   <SeoPage slot="head" />
   <main>
     <Introduction />
-    <hr class="animate my-8 border-[0.5px]" />
+    <hr class="border-[0.5px] my-6 animate" />
 
-    <section class="animate mb-8">
-      <h2 class="mb-3 text-lg font-bold">Blog posts</h2>
-      <ul class="mb-4 grid list-none gap-2 p-0">
+    <section class="mb-8 animate">
+      <h2 class="mb-3 font-bold text-lg">Blog posts</h2>
+      <ul class="gap-2 grid mb-8 p-0 list-none">
         {posts.slice(0, 8).map((post) => <Post post={post} />)}
       </ul>
       <Link href="/blog">More posts</Link>
-      <h2 class="mb-3 mt-8 text-lg font-bold">Projects</h2>
-      <ul class="mb-4 grid list-none gap-2 p-0">
+      <!-- <h2 class="mt-8 mb-3 font-bold text-lg">Projects</h2>
+      <ul class="gap-2 grid mb-4 p-0 list-none">
         {projects.slice(0, 5).map((project) => <Project project={project} />)}
       </ul>
-      <Link href="/projects">More projects</Link>
+      <Link href="/projects">More projects</Link> -->
     </section>
     <Footer />
   </main>

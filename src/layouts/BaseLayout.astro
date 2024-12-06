@@ -10,10 +10,8 @@ import Navigation from "@/components/Navigation.astro";
   <BaseHead>
     <slot name="head" />
   </BaseHead>
-  <body>
-    <main class="mx-auto p-3 sm:p-6 max-w-screen-sm min-h-screen font-sans">
-      <Navigation />
-      <slot />
-    </main>
+  <body class="mx-auto p-3 sm:p-6 max-w-screen-sm min-h-screen font-sans">
+    <Navigation />
+    <slot />
   </body>
 </html>
