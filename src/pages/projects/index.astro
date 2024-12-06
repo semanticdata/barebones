@@ -11,7 +11,7 @@ const projects = await getCollection("projects");
 
 <BaseLayout>
   <SeoPage slot="head" title="Projects" />
-  <h2 class="mb-3 font-bold text-xl animate">Projects</h2>
+  <h2 class="mb-3 font-bold animate">Projects</h2>
   <section class="animate">
     <ul class="gap-2 grid p-0 list-none">
       {projects.map((project) => <Project project={project} />)}
