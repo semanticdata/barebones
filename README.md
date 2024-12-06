@@ -1,4 +1,4 @@
-# Barebones - Blog
+# No Longer Barebones - Blog
 
 This project is based on Barebones (Astro) and currently holds a copy of my blog.
 
@@ -23,11 +23,9 @@ Read the [documentation for Barebones](https://docs.superwebthemes.com), join th
 
 ## Changes from Upstream
 
+- New CSS Animations (`.animate`)
 - [Back to Top button](./src/components/BackToTop.astro)
-- [Animate (sections)](https://github.com/semanticdata/barebones/blob/9909528645b8d53df36e62be1ff38ff53ba8fed7/src/components/BaseHead.astro#L44C1-L52C6)
-- [Style Blockquotes](https://github.com/semanticdata/barebones/blob/9909528645b8d53df36e62be1ff38ff53ba8fed7/src/styles/global.css#L40C1-L44C4)
-- [Style Tables](https://github.com/semanticdata/barebones/blob/9909528645b8d53df36e62be1ff38ff53ba8fed7/src/styles/global.css#L22C1-L38C4)
-- [Style Tables (test link)](./src/styles/global.css#L22C1-L38C4)
-- [404 Page](./src/pages/404.astro)
 - [Link/Button component](./src/components/Link.astro)
-- [Table of Contents component](./src/components/TableOfContents.astro)
+- [Table of Contents](./src/components/TableOfContents.astro)
+- [404 Page](./src/pages/404.astro)
+- [Theme Toggle](./src/components/ThemeToggle.astro)
