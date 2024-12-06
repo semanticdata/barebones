@@ -79,6 +79,7 @@
   }
 
   a {
-    @apply text-purple-700 hover:text-purple-400;
+    /* @apply text-purple-700 hover:text-purple-400; */
+    color: inherit;
   }
 }
