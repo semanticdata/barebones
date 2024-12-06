@@ -7,7 +7,7 @@ export default defineConfig({
   // change this to your own domain
   site: "https://barebones-phi.vercel.app/",
   integrations: [tailwind(), sitemap()],
-  legacy: {
-    collections: true
-  }
+  // legacy: {
+  //   collections: true
+  // }
 });
