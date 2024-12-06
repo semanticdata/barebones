@@ -13,7 +13,7 @@ const posts = (await getCollection("blog")).sort(
 
 <BaseLayout>
   <SeoPage slot="head" title="Blog" />
-  <h2 class="mb-3 font-bold animate">Blog</h2>
+  <h1 class="mb-4 animate">Blog</h1>
   <section class="animate">
     <ul class="gap-2 grid p-0 list-none">
       {posts.map((post) => <Post post={post} />)}
