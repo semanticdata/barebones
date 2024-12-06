@@ -23,10 +23,11 @@ Read the [documentation for Barebones](https://docs.superwebthemes.com), join th
 
 ## Changes from Upstream
 
-- [Back to Top button](./src/components/BackToTop.astro)
 - [Link/Button component](./src/components/Link.astro)
 - [Table of Contents](./src/components/TableOfContents.astro)
-- [404 Page](./src/pages/404.astro)
+- [Footer component](./src/components/Footer.astro)
 - [Theme Toggle](./src/components/ThemeToggle.astro)
+- [Back to Top button](./src/components/BackToTop.astro)
 - New CSS Animations (`.animate`)
 - Code Copy button (`.copy-code`)
+- [404 Page](./src/pages/404.astro)
