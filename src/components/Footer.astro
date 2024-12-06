@@ -1,8 +1,16 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+import BackToTop from "./BackToTop.astro";
 ---
 
 <footer class="animate">
-  <hr class="my-4 border-[0.5px]" />
-  <ThemeToggle />
+  <hr class="border-[0.5px] my-4" />
+  <div class="flex justify-between">
+    <div class="flex flex-wrap items-center gap-1.5">
+      <ThemeToggle />
+    </div>
+    <div>
+      <BackToTop />
+    </div>
+  </div>
 </footer>
