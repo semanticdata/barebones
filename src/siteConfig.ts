@@ -8,7 +8,7 @@ export const SITE: SiteConfiguration = {
   title: "MiguelPimentel.do",
   description:
     "Personal website and blog. Contains a short list of my projects, and blog posts.",
-  url: "https://barebones-phi.vercel.app/",
+  url: "https://miguelpimentel.do/",
   author: "Miguel Pimentel",
   locale: "en-US",
 };
