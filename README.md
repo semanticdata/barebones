@@ -1,4 +1,4 @@
-# No Longer Barebones - Blog
+# No Longer Barebones - My Current Blog
 
 This project is based on Barebones (Astro) and currently holds a copy of my blog.
 
