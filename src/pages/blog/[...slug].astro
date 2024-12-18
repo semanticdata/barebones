@@ -38,6 +38,8 @@ const { Content, headings } = await render(entry);
           src={entry.data.image}
           alt={entry.data.imageAlt || ""}
           class="w-full h-auto animate"
+          loading="eager"
+          decoding="async"
         />
       )
     }
