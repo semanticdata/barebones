@@ -1,35 +1,31 @@
-# No Longer Barebones - My Current Blog
+# [MiguelPimentel.do](https://miguelpimentel.do/) - My Current Blog
 
-This project is based on Barebones (Astro) and currently holds a copy of my blog.
+This project contains my blog.
 
-[View demo](https://barebones-phi.vercel.app/)
-
-## Commands
+## Useful Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## Further reading
-
-Read the [documentation for Barebones](https://docs.superwebthemes.com), join their [Discord server](https://discord.gg/V5MCBCsAjJ).
+| Command               | Action                                           |
+| :-------------------- | :----------------------------------------------- |
+| `npm install`         | Installs dependencies                            |
+| `npm start`           | Starts local dev server at `localhost:4321`      |
+| `npm run build`       | Build your production site to `./dist/`          |
+| `npm run preview`     | Preview your build locally, before deploying     |
+| `npx astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npx astro -- --help` | Get help using the Astro CLI                     |
 
 ## Changes from Upstream
 
-- [Link/Button component](./src/components/Link.astro)
 - [Table of Contents](./src/components/TableOfContents.astro)
-- [Footer component](./src/components/Footer.astro)
+- [Links/Buttons](./src/components/Link.astro)
+- [Footer](./src/components/Footer.astro)
 - [Theme Toggle](./src/components/ThemeToggle.astro)
-- [Back to Top button](./src/components/BackToTop.astro)
-- New CSS Animations (`.animate`)
+- [Back to Top](./src/components/BackToTop.astro)
+- CSS Animations (`.animate`)
 - Code Copy button (`.copy-code`)
-- [404 Page](./src/pages/404.astro)
 - Full-bleed effect for codeblocks on small screens
-- [Previous/Next navigation](./src/components/PostNavigation.astro)
+- [404 Page](./src/pages/404.astro)
+- [Previous/Next Blog post navigation](./src/components/PostNavigation.astro)
+
+The code in this repository is available under the [MIT License](LICENSE).
