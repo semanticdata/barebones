@@ -29,20 +29,20 @@
     );
   }
 
-  table {
-    @apply border-collapse;
+  .prose table {
+    @apply border-collapse shadow-md dark:shadow-white/15;
   }
 
-  table thead th,
-  table tfoot th {
+  .prose table thead th,
+  .prose table tfoot th {
     background-color: light-dark(
       rgb(var(--dark-mode-foreground-muted)),
       rgb(var(--light-mode-foreground-muted))
     );
   }
 
-  table th,
-  table td {
+  .prose table th,
+  .prose table td {
     border: 1px solid;
     border-color: light-dark(
       rgb(var(--light-mode-foreground-muted)),
