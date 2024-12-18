@@ -6,7 +6,9 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Post from "@/components/Post.astro";
 import SeoPage from "@/components/SeoPage.astro";
 
-const posts = (await getCollection("blog")).sort(
+const posts = (await getCollection("blog"))
+.filter((post) => !post.data.draft)
+.sort(
   (a, b) => b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf()
 );
 ---

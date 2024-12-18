@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 // type Props = CollectionEntry<"blog">;
 
 const blog = (await getCollection("blog"))
-  // .filter((post) => !post.data.draft)
+  .filter((post) => !post.data.draft)
   .sort(
     (a, b) =>
       b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf()
