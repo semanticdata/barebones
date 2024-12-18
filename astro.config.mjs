@@ -4,10 +4,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  // change this to your own domain
-  site: "https://barebones-phi.vercel.app/",
+  site: "https://miguelpimentel.do/",
   integrations: [tailwind(), sitemap()],
-  // legacy: {
-  //   collections: true
-  // }
 });
