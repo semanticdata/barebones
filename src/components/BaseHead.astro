@@ -140,8 +140,8 @@ import Favicons from "@/components/Favicons.astro";
                -ms-transition: none !important;
                transition: none !important;
             }
-          `,
-        ),
+          `
+        )
       );
 
       document.head.appendChild(css);
@@ -184,18 +184,12 @@ import Favicons from "@/components/Favicons.astro";
       }
 
       for (let codeBlock of codeBlocks) {
-        const wrapper = document.createElement("div");
-        wrapper.style.position = "relative";
-
         const copyButton = document.createElement("button");
         copyButton.innerText = copyButtonLabel;
         copyButton.classList = "copy-code";
 
         codeBlock.setAttribute("tabindex", "0");
         codeBlock.appendChild(copyButton);
-
-        codeBlock.parentNode.insertBefore(wrapper, codeBlock);
-        wrapper.appendChild(codeBlock);
 
         copyButton?.addEventListener("click", async () => {
           await copyCode(codeBlock, copyButton);
