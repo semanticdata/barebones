@@ -103,7 +103,7 @@
 
   /* copy code button on codeblocks */
   .copy-code {
-    @apply fixed right-2 top-2 grid size-8 cursor-pointer place-content-center rounded border border-black/15 bg-neutral-100 text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
+    @apply absolute right-2 top-2 grid size-8 cursor-pointer place-content-center rounded border border-black/15 bg-neutral-100 text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
   }
 
   .copy-code:hover {
