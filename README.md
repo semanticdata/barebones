@@ -31,3 +31,5 @@ Read the [documentation for Barebones](https://docs.superwebthemes.com), join th
 - New CSS Animations (`.animate`)
 - Code Copy button (`.copy-code`)
 - [404 Page](./src/pages/404.astro)
+- Full-bleed effect for codeblocks on small screens
+- [Previous/Next navigation](./src/components/PostNavigation.astro)
