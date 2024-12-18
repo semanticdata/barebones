@@ -6,7 +6,9 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Project from "@/components/Project.astro";
 import SeoPage from "@/components/SeoPage.astro";
 
-const projects = await getCollection("projects");
+const projects = (await getCollection("projects")).sort((b, a) =>
+  b.data.title.localeCompare(a.data.title),
+);
 ---
 
 <BaseLayout>
