@@ -29,7 +29,7 @@ const grouppedHeadings = headings.reduce((array, heading) => {
     <ul class="py-3">
       {
         grouppedHeadings.map((h) => (
-          <li class="list-disc list-inside">
+          <li class="py-1 list-disc list-inside">
             <a href={`#${h.slug}`}>{h.text}</a>
             {h.subheadings.length > 0 && (
               <ul>
