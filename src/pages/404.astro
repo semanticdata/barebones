@@ -2,19 +2,14 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import SeoPage from "@/components/SeoPage.astro";
-
 import Link from "@/components/Link.astro";
 ---
 
 <BaseLayout>
   <SeoPage slot="head" />
   <h2 class="font-semibold text-2xl animate">404: Page not found</h2>
-  <p class="mt-8 animate">
-    <!-- <a
-      href="/"
-      class="hover:bg-slate-700 shadow-sm mt-4 px-2 py-1 border rounded-md focus:ring focus:ring-slate-500 focus:ring-offset-2 font-medium text-sm focus:text-white no-underline transition-colors duration-150 focus:outline-none"
-      >Go to home page</a
-    > -->
-    <Link href="/">Go to home page</Link>
+  <p class="my-6 animate">
+    Sorry, but the page you are trying to visit does not exist.
   </p>
+  <Link href="/">Go to home page</Link>
 </BaseLayout>
