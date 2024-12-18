@@ -1,4 +1,4 @@
-# [MiguelPimentel.do](https://miguelpimentel.do/) - My Current Blog
+# [MiguelPimentel.do](https://miguelpimentel.do/)
 
 This project contains my blog.
 
