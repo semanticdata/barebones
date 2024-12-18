@@ -1,0 +1,17 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grayscale-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3a3a3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cecece;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#grayscale-gradient)" />
+
+  <text x="60%" y="50%" font-family="sans-serif" font-size="72" fill="black" text-anchor="middle" alignment-baseline="middle">
+    MiguelPimentel.do
+  </text>
+
+  <circle class="ring" cx="234" cy="300" r="115" fill="none" stroke="#fff" stroke-width="15" />
+  <circle class="nucleus" fill="#ababab" cx="234" cy="300" r="66.3" />
+  <circle class="electron" fill="#ababab" cx="324" cy="229.4" r="28" />
+</svg>
