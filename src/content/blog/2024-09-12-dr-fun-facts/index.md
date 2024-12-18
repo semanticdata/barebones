@@ -2,6 +2,8 @@
 title: "10 Fun Facts About the Dominican Republic"
 description: "Uncover the lively culture, breathtaking scenery, and distinctive traditions of the Dominican Republic through these 10 fun facts."
 publicationDate: 2024-09-12
+image: ./cover-image.webp
+imageAlt: Dominican flag by Ruddy Corporan.
 ---
 
 When people think about the Dominican Republic, their minds often drift to images of pristine white sand beaches, swaying palm trees, and the warm, turquoise waters of the Caribbean Sea. While these picturesque scenes are undeniably a part of the country's charm, there's much more to discover, from its rich cultural history to unique natural wonders that make the Dominican Republic a destination full of surprises.
