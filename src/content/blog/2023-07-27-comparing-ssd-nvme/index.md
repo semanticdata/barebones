@@ -1,16 +1,10 @@
 ---
 title: "Comparing SSD and NVMe Technologies"
 description: "The main goal of this post was to aid in selecting SSD, and NVMe drives during a Micro Center sale."
-publicationDate: "2023-07-27"
+publicationDate: 2023-07-27
 image: ./cover-image.webp
 imageAlt: SSD NVME by Marc PEZIN.
 ---
-
-<!-- <div>
-<img src="https://bear-images.sfo2.cdn.digitaloceanspaces.com/database-1718584442-0.jpg" alt="ssd drive" id="post-image" style="border:none;" />
-<p id="image-alt-text">Photo by <a href="https://unsplash.com/@fennings?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Marc PEZIN</a>
- on <a href="https://unsplash.com/?utm_source=miguelpimentel.do&utm_medium=referral">Unsplash</a></p>
-</div> -->
 
 The main goal of this post was to aid in selecting SSD, and NVMe drives during a Micro Center sale. But I'll try to give an overview of what to look for next time you find yourself in the same position.
 
