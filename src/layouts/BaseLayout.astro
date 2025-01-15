@@ -3,7 +3,7 @@ import "@/styles/reset.css";
 import "@/styles/global.css";
 
 import BaseHead from "@/components/BaseHead.astro";
-import Navigation from "@/components/Navigation.astro";
+import Header from "@/components/Header.astro";
 ---
 
 <html lang="en">
@@ -11,7 +11,7 @@ import Navigation from "@/components/Navigation.astro";
     <slot name="head" />
   </BaseHead>
   <body class="mx-auto p-4 max-sm:p-4 max-w-screen-sm min-h-screen font-sans">
-    <Navigation />
+    <Header />
     <slot />
   </body>
 </html>
