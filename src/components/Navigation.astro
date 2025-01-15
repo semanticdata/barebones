@@ -1,6 +1,6 @@
 ---
 import { NAV_LINKS, SITE } from "@/siteConfig.ts";
-import Link from "./Link.astro";
+import Button from "./Button.astro";
 ---
 
 <header class="flex flex-col mb-8">
@@ -15,9 +15,9 @@ import Link from "./Link.astro";
         Object.keys(NAV_LINKS).map((navItemKey) => {
           return (
             <li>
-              <Link href={NAV_LINKS[navItemKey].path}>
+              <Button href={NAV_LINKS[navItemKey].path}>
                 {NAV_LINKS[navItemKey].label}
-              </Link>
+              </Button>
             </li>
           );
         })
