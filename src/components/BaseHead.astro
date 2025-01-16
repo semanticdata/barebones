@@ -27,6 +27,7 @@ import HeadScript from "@/components/HeadScript.astro";
     href={new URL("rss.xml", Astro.site)}
   />
 
+  <!-- Fallback for non-JS. This implements a "basic" version of the `animate` class. -->
   <noscript>
     <style>
       .animate {
