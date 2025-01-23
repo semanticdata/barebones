@@ -1,6 +1,39 @@
 # [MiguelPimentel.do](https://miguelpimentel.do/)
 
-This project contains my blog.
+My personal website and blog built with [Astro](https://astro.build/). Features a minimalist design, dark mode support, and excellent performance metrics.
+
+## Features
+
+- ⚡️ **Fast & Lightweight** - Built with Astro for optimal performance
+- 🌙 **Dark Mode** - Automatic theme detection with manual toggle
+- 📱 **Responsive Design** - Mobile-first approach
+- 📝 **Blog Support** - Write in Markdown/MDX
+- 🔍 **SEO Optimized** - Meta tags and structured data
+- 📰 **RSS Feed** - Automatic RSS generation
+- 🗺️ **Sitemap** - Automatic sitemap generation
+- 📊 **Analytics Ready** - Privacy-focused analytics setup
+- 🎨 **Tailwind CSS** - For styling and rapid development
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18 or higher
+- npm (comes with Node.js)
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/miguelpimentel-do.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
 
 ## Useful Commands
 
