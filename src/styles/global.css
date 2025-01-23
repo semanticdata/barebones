@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @layer base {
+  /* Theme Variables
+  ----------------------------------------- */
   :root {
     --light-mode-background: 240 240 240;
     --light-mode-foreground: 0 0 0;
@@ -12,6 +14,8 @@
     --dark-mode-foreground-muted: 205 205 205;
   }
 
+  /* Base HTML Elements
+  ----------------------------------------- */
   html {
     overflow-y: auto;
     color-scheme: light;
@@ -29,6 +33,20 @@
     );
   }
 
+  a {
+    color: inherit;
+  }
+
+  code {
+    @apply break-words;
+  }
+
+  ::selection {
+    @apply bg-[rebeccapurple] text-white;
+  }
+
+  /* Typography & Content Styles
+  ----------------------------------------- */
   .prose table {
     @apply border-collapse shadow-md dark:shadow-white/15;
   }
@@ -59,6 +77,8 @@
     );
   }
 
+  /* Code Block Styles
+  ----------------------------------------- */
   .prose pre {
     @apply dark:border;
   }
@@ -72,6 +92,20 @@
     }
   }
 
+  .copy-code {
+    @apply absolute right-2 top-2 grid size-8 cursor-pointer place-content-center rounded border border-white/50 bg-neutral-700 text-center duration-300 ease-in-out dark:bg-neutral-900;
+  }
+
+  .copy-code:hover {
+    @apply bg-[#E9E9E9] transition-colors dark:bg-[#232323];
+  }
+
+  .copy-code:active {
+    @apply scale-90 transition-transform;
+  }
+
+  /* Utility Classes
+  ----------------------------------------- */
   .border {
     border: 1px solid;
   }
@@ -85,36 +119,13 @@
     @apply translate-y-0 opacity-100;
   }
 
+  /* Back to Top Button
+  ----------------------------------------- */
   html #back-to-top {
     @apply pointer-events-none opacity-0;
   }
 
   html.scrolled #back-to-top {
     @apply pointer-events-auto opacity-100;
-  }
-
-  a {
-    color: inherit;
-  }
-
-  code {
-    @apply break-words;
-  }
-
-  ::selection {
-    @apply bg-[rebeccapurple] text-white;
-  }
-
-  /* copy code button on codeblocks */
-  .copy-code {
-    @apply absolute right-2 top-2 grid size-8 cursor-pointer place-content-center rounded border border-white/50 bg-neutral-700 text-center duration-300 ease-in-out dark:bg-neutral-900;
-  }
-
-  .copy-code:hover {
-    @apply bg-[#E9E9E9] transition-colors dark:bg-[#232323];
-  }
-
-  .copy-code:active {
-    @apply scale-90 transition-transform;
   }
 }
