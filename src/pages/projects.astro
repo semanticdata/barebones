@@ -5,6 +5,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import Project from "@/components/Project.astro";
 import SeoPage from "@/components/SeoPage.astro";
+import Footer from "@/components/Footer.astro";
 
 const projects = (await getCollection("projects")).sort((b, a) =>
   b.data.title.localeCompare(a.data.title),
@@ -13,10 +14,11 @@ const projects = (await getCollection("projects")).sort((b, a) =>
 
 <BaseLayout>
   <SeoPage slot="head" title="Projects" />
-  <h1 class="mb-4 animate">Projects</h1>
-  <section class="animate">
-    <ul class="gap-2 grid p-0 list-none">
+  <h1 class="animate mb-4">Projects</h1>
+  <section class="animate flex-1">
+    <ul class="grid list-none gap-2 p-0">
       {projects.map((project) => <Project project={project} />)}
     </ul>
   </section>
+  <Footer />
 </BaseLayout>

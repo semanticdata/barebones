@@ -3,6 +3,7 @@ import { SOCIAL_LINKS } from "@/siteConfig";
 
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SeoPage from "@/components/SeoPage.astro";
+import Footer from "@/components/Footer.astro";
 
 const socialLinksArray = Object.keys(SOCIAL_LINKS).map((key) => ({
   url: SOCIAL_LINKS[key].url,
@@ -12,9 +13,9 @@ const socialLinksArray = Object.keys(SOCIAL_LINKS).map((key) => ({
 
 <BaseLayout>
   <SeoPage slot="head" title="Contact" />
-  <h1 class="mb-4 animate">Contact</h1>
-  <section class="animate">
-    <ul class="gap-2 grid p-0 list-none">
+  <h1 class="animate mb-4">Contact</h1>
+  <section class="animate flex-1">
+    <ul class="grid list-none gap-2 p-0">
       {
         socialLinksArray.map((link) => (
           <li class="animate">
@@ -32,4 +33,5 @@ const socialLinksArray = Object.keys(SOCIAL_LINKS).map((key) => ({
       }
     </ul>
   </section>
+  <Footer />
 </BaseLayout>
