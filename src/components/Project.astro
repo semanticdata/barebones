@@ -8,8 +8,8 @@ interface Props {
 const { project } = Astro.props;
 ---
 
-<li class="mb-6 animate">
-  <div class="flex items-center gap-0.5 mb-1">
+<li class="animate mb-6">
+  <div class="mb-1 flex items-center gap-0.5">
     <a href={project.data.url} target="_blank">
       {project.data.title}
     </a>

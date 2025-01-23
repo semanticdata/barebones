@@ -10,21 +10,22 @@ import Button from "@/components/Button.astro";
 import Footer from "@/components/Footer.astro";
 
 const posts = (await getCollection("blog"))
-.filter((post) => !post.data.draft)
-.sort(
-  (a, b) => b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf()
-);
+  .filter((post) => !post.data.draft)
+  .sort(
+    (a, b) =>
+      b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf(),
+  );
 ---
 
 <BaseLayout>
   <SeoPage slot="head" />
   <main>
     <Introduction />
-    <hr class="border-[0.5px] my-6 animate" />
+    <hr class="animate my-6 border-[0.5px]" />
 
-    <section class="mb-8 animate">
-      <h2 class="mb-3 font-bold text-lg">Blog posts</h2>
-      <ul class="gap-2 grid mb-8 p-0 list-none">
+    <section class="animate mb-8">
+      <h2 class="mb-3 text-lg font-bold">Blog posts</h2>
+      <ul class="mb-8 grid list-none gap-2 p-0">
         {posts.slice(0, 8).map((post) => <Post post={post} />)}
       </ul>
       <Button href="/blog">More posts</Button>

@@ -16,11 +16,6 @@ My personal website and blog built with [Astro](https://astro.build/). Features 
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 18 or higher
-- npm (comes with Node.js)
-
 ### Installation
 
 1. Clone the repository:

@@ -21,7 +21,7 @@ const grouppedHeadings = headings.reduce((array, heading) => {
 
 <details
   open
-  class="dark:border-white/50 mb-4 border border-black rounded animate"
+  class="animate mb-4 rounded border border-black dark:border-white/50"
 >
   <summary>Table of Contents</summary>
 
@@ -29,12 +29,12 @@ const grouppedHeadings = headings.reduce((array, heading) => {
     <ul class="py-3">
       {
         grouppedHeadings.map((h) => (
-          <li class="py-1 list-disc list-inside">
+          <li class="list-inside list-disc py-1">
             <a href={`#${h.slug}`}>{h.text}</a>
             {h.subheadings.length > 0 && (
               <ul>
                 {h.subheadings.map((sub) => (
-                  <li class="list-disc list-inside">
+                  <li class="list-inside list-disc">
                     <a href={`#${sub.slug}`}>{sub.text}</a>
                   </li>
                 ))}
@@ -66,7 +66,7 @@ const grouppedHeadings = headings.reduce((array, heading) => {
           tocItem.classList.add("active-toc-item");
         } else {
           const isAnyOtherEntryIntersecting = entries.some(
-            (e) => e.target.id !== entry.target.id && e.isIntersecting
+            (e) => e.target.id !== entry.target.id && e.isIntersecting,
           );
 
           if (isAnyOtherEntryIntersecting) {
@@ -75,11 +75,11 @@ const grouppedHeadings = headings.reduce((array, heading) => {
         }
       }
     },
-    { root: null, rootMargin: "0px", threshold: [1] }
+    { root: null, rootMargin: "0px", threshold: [1] },
   );
 
   const sectionHeadings = document.querySelectorAll(
-    "article > h2, article > h3"
+    "article > h2, article > h3",
   );
 
   for (const heading of sectionHeadings) {
@@ -99,7 +99,7 @@ const grouppedHeadings = headings.reduce((array, heading) => {
 
 <style>
   summary {
-    @apply px-3 py-1.5 rounded-t font-medium transition-colors cursor-pointer;
+    @apply cursor-pointer rounded-t px-3 py-1.5 font-medium transition-colors;
   }
 
   summary:hover {

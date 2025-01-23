@@ -4,7 +4,7 @@ import { formatDate } from "@/lib/util";
 const { post } = Astro.props;
 ---
 
-<li class="flex sm:flex-row flex-col sm:justify-between no-underline">
+<li class="flex flex-col no-underline sm:flex-row sm:justify-between">
   <a href={`/blog/${post.id}`}>
     <span>{post.data.title}</span>
   </a>
