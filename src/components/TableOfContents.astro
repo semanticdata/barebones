@@ -55,7 +55,9 @@ const grouppedHeadings = headings.reduce((array, heading) => {
   const observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
-        const headingFragment = `#${entry.target.id}`;
+        // Clean the heading ID the same way we clean the slugs
+        const cleanId = entry.target.id.replace(/^\d+\.?\s*/, "");
+        const headingFragment = `#${cleanId}`;
         const tocItem = document.querySelector(`a[href="${headingFragment}"]`);
 
         if (entry.isIntersecting) {
@@ -63,14 +65,14 @@ const grouppedHeadings = headings.reduce((array, heading) => {
             document.querySelector(".active-toc-item");
 
           previouslyActivatedItem?.classList.remove("active-toc-item");
-          tocItem.classList.add("active-toc-item");
+          tocItem?.classList.add("active-toc-item");
         } else {
           const isAnyOtherEntryIntersecting = entries.some(
             (e) => e.target.id !== entry.target.id && e.isIntersecting,
           );
 
           if (isAnyOtherEntryIntersecting) {
-            tocItem.classList.remove("active-toc-item");
+            tocItem?.classList.remove("active-toc-item");
           }
         }
       }
@@ -86,15 +88,24 @@ const grouppedHeadings = headings.reduce((array, heading) => {
     observer.observe(heading);
   }
 
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
+  document
+    .querySelectorAll('#table-of-contents a[href^="#"]')
+    .forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
 
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth",
+        const href = this.getAttribute("href")?.slice(1); // Remove the # from href
+        if (!href) return;
+
+        const targetHeading = document.getElementById(href);
+        if (targetHeading) {
+          targetHeading.scrollIntoView({
+            behavior: "smooth",
+          });
+          history.pushState(null, "", `#${href}`);
+        }
       });
     });
-  });
 </script>
 
 <style>
