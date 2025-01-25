@@ -9,25 +9,18 @@
     const backToTop = document.getElementById("back-to-top");
     backToTop?.addEventListener("click", (event) => scrollToTop(event));
 
-    const lightThemeButton = document.getElementById("light-theme-button");
-    lightThemeButton?.addEventListener("click", () => {
-      localStorage.setItem("theme", "light");
-      toggleTheme(false);
-      updateThemeButtons();
-    });
+    const themeButtons = {
+      light: document.getElementById("light-theme-button"),
+      dark: document.getElementById("dark-theme-button"),
+      system: document.getElementById("system-theme-button"),
+    };
 
-    const darkThemeButton = document.getElementById("dark-theme-button");
-    darkThemeButton?.addEventListener("click", () => {
-      localStorage.setItem("theme", "dark");
-      toggleTheme(true);
-      updateThemeButtons();
-    });
-
-    const systemThemeButton = document.getElementById("system-theme-button");
-    systemThemeButton?.addEventListener("click", () => {
-      localStorage.setItem("theme", "system");
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
-      updateThemeButtons();
+    Object.entries(themeButtons).forEach(([theme, button]) => {
+      button?.addEventListener("click", () => {
+        localStorage.setItem("theme", theme);
+        toggleTheme(theme === "dark");
+        updateThemeButtons();
+      });
     });
 
     window
@@ -43,31 +36,17 @@
 
   function updateThemeButtons() {
     const theme = localStorage.getItem("theme");
-    const lightThemeButton = document.getElementById("light-theme-button");
-    const darkThemeButton = document.getElementById("dark-theme-button");
-    const systemThemeButton = document.getElementById("system-theme-button");
+    const themeButtons = {
+      light: document.getElementById("light-theme-button"),
+      dark: document.getElementById("dark-theme-button"),
+      system: document.getElementById("system-theme-button"),
+    };
 
-    function removeActiveButtonTheme(button) {
-      button?.classList.remove("bg-black/15");
-      button?.classList.remove("dark:bg-white/5");
-    }
+    Object.values(themeButtons).forEach((button) => {
+      button?.classList.remove("bg-black/15", "dark:bg-white/5");
+    });
 
-    function addActiveButtonTheme(button) {
-      button?.classList.add("bg-black/15");
-      button?.classList.add("dark:bg-white/5");
-    }
-
-    removeActiveButtonTheme(lightThemeButton);
-    removeActiveButtonTheme(darkThemeButton);
-    removeActiveButtonTheme(systemThemeButton);
-
-    if (theme === "light") {
-      addActiveButtonTheme(lightThemeButton);
-    } else if (theme === "dark") {
-      addActiveButtonTheme(darkThemeButton);
-    } else {
-      addActiveButtonTheme(systemThemeButton);
-    }
+    themeButtons[theme]?.classList.add("bg-black/15", "dark:bg-white/5");
   }
 
   function animate() {
