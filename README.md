@@ -56,4 +56,6 @@ All commands are run from the root of the project, from a terminal:
 - [404 Page](./src/pages/404.astro)
 - [Previous/Next Blog post navigation](./src/components/PostNavigation.astro)
 
-The code in this repository is available under the [MIT License](LICENSE).
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
