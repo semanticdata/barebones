@@ -18,7 +18,14 @@
     Object.entries(themeButtons).forEach(([theme, button]) => {
       button?.addEventListener("click", () => {
         localStorage.setItem("theme", theme);
-        toggleTheme(theme === "dark");
+        if (theme === "system") {
+          const isDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          toggleTheme(isDark);
+        } else {
+          toggleTheme(theme === "dark");
+        }
         updateThemeButtons();
       });
     });
@@ -31,11 +38,11 @@
         }
       });
 
-    document.addEventListener("scroll", onScroll);
+    document.addEventListener("scroll", debounce(onScroll, 100));
   }
 
   function updateThemeButtons() {
-    const theme = localStorage.getItem("theme");
+    const theme = localStorage.getItem("theme") || "light";
     const themeButtons = {
       light: document.getElementById("light-theme-button"),
       dark: document.getElementById("dark-theme-button"),
@@ -76,31 +83,8 @@
   }
 
   function toggleTheme(dark) {
-    const css = document.createElement("style");
-
-    css.appendChild(
-      document.createTextNode(
-        `* {
-               -webkit-transition: none !important;
-               -moz-transition: none !important;
-               -o-transition: none !important;
-               -ms-transition: none !important;
-               transition: none !important;
-            }
-          `,
-      ),
-    );
-
-    document.head.appendChild(css);
-
-    if (dark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-
-    window.getComputedStyle(css).opacity;
-    document.head.removeChild(css);
+    document.documentElement.classList.toggle("dark", dark);
+    updateThemeButtons();
   }
 
   function preloadTheme() {
@@ -109,7 +93,8 @@
     if (userTheme === "light" || userTheme === "dark") {
       toggleTheme(userTheme === "dark");
     } else {
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      toggleTheme(isDark);
     }
   }
 
@@ -153,6 +138,19 @@
   //     });
   //   });
   // }
+
+  // Debounce function to limit the rate of function calls
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
 
   document.addEventListener("DOMContentLoaded", () => init());
   document.addEventListener("astro:after-swap", () => init());
