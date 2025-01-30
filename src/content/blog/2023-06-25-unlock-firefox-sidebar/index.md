@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Unlock the Sidebar Width in Firefox"
+title: "Unlock the Sidebar Width in Firefox"
 description: "Tutorial about unlocking the max-width of Firefox's sidebar. Doing so gives you a better experience when using extensions embedded within the sidebar."
 publicationDate: 2023-06-25
 image: ./cover-image.webp
@@ -87,4 +87,5 @@ Change its value to `true`.
 Finally, restart Firefox for the changes to take effect.
 
 ---
+
 [^1]: In Windows, `%appdata%` is equivalent to: `C:\Users\your-username\AppData\Roaming`.
