@@ -62,23 +62,23 @@ const { Content, headings } = await render(entry);
 
 <BaseLayout>
   <SeoPost slot="head" entry={entry} />
+  <h1 class="animate">{entry.data.title}</h1>
+  <p class="animate">
+    {formatDate(entry.data.publicationDate)}
+  </p>
+  <hr class="animate my-8" />
   <div>
     {
       entry.data.image && (
         <Image
           src={entry.data.image}
           alt={entry.data.imageAlt || ""}
-          class="animate h-auto w-full rounded shadow-md dark:shadow-white/15"
+          class="animate mb-4 h-auto w-full rounded shadow-md dark:shadow-white/15"
           loading="eager"
           decoding="async"
         />
       )
     }
-    <h1 class="animate mt-3">{entry.data.title}</h1>
-    <p class="animate">
-      {formatDate(entry.data.publicationDate)}
-    </p>
-    <hr class="animate mb-6 mt-3" />
 
     <TableOfContents headings={headings} />
 
