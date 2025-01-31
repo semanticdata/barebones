@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
-import Introduction from "@/components/Introduction.astro";
 import Post from "@/components/Post.astro";
 import SeoPage from "@/components/SeoPage.astro";
 import Button from "@/components/Button.astro";
@@ -21,7 +20,31 @@ const posts = (await getCollection("blog"))
 <BaseLayout>
   <SeoPage slot="head" />
   <main>
-    <Introduction />
+    <section class="animate">
+      <h1 class="animate mb-3 text-xl font-bold">Hi, I'm Miguel!</h1>
+      <p class="animate">
+        I’m a problem solver, hobby developer, music enthusiast, and public
+        infrastructure advocate based in Minnesota, US. I’m passionate about
+        using technology and creative thinking to tackle challenges, whether
+        it's building better websites or designing efficient urban systems.
+      </p>
+      <br />
+      <p class="animate">
+        With a background in engineering project management and a self-taught
+        love for coding, I enjoy blending my technical knowledge with
+        curiosity-driven side projects. When I’m not working, you’ll find me
+        learning new programming languages, experimenting with web development,
+        or digging into the latest trends in public infrastructure.
+      </p>
+      <br />
+      <p class="animate">
+        I think a lot, work hard, occasionally have existential crises, and know
+        just enough about making websites to make things interesting. While I
+        love writing, coding, and listening to music, my true motivation lies in
+        finding elegant solutions to complex problems.
+      </p>
+    </section>
+
     <hr class="animate my-6 border-[0.5px]" />
 
     <section class="animate mb-8">
@@ -31,6 +54,7 @@ const posts = (await getCollection("blog"))
       </ul>
       <Button href="/blog">More posts</Button>
     </section>
+
     <hr class="animate my-6 border-[0.5px]" />
 
     <ContactMe />
