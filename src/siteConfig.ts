@@ -27,8 +27,8 @@ export const NAV_LINKS: NavigationLinks = {
     label: "Projects",
   },
   contact: {
-    path: "/contact",
-    label: "Contact",
+    path: "/uses",
+    label: "Uses",
   },
   rss: {
     path: "/rss.xml",
