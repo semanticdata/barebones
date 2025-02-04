@@ -30,7 +30,7 @@ const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .sort(
     (a, b) =>
-      b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf(),
+      b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf()
   );
 
 function getNextPost() {
@@ -76,6 +76,8 @@ const { Content, headings } = await render(entry);
           class="animate mb-4 h-auto w-full rounded shadow-md dark:shadow-white/15"
           loading="eager"
           decoding="async"
+          width="608"
+          height="405"
         />
       )
     }
