@@ -1,4 +1,4 @@
-import { SITE } from "@/siteConfig.ts";
+import { SITE } from "@/siteConfig";
 
 export function formatDate(
   date: Date,
