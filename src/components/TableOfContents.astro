@@ -19,93 +19,53 @@ const grouppedHeadings = headings.reduce((array, heading) => {
 }, [] as HeadingWithSubheadings[]);
 ---
 
-<details class="animate my-8 rounded border border-black dark:border-white/50">
+<details
+  class="animate toc-details my-8 rounded border border-black dark:border-white/50"
+>
   <summary>Table of Contents</summary>
-
-  <nav id="table-of-contents" aria-label="Table Of Contents">
-    <ul class="py-3">
-      {
-        grouppedHeadings.map((h) => (
-          <li class="list-inside list-disc py-1">
-            <a href={`#${h.slug}`}>{h.text}</a>
-            {h.subheadings.length > 0 && (
-              <ul>
-                {h.subheadings.map((sub) => (
-                  <li class="list-inside list-disc">
-                    <a href={`#${sub.slug}`}>{sub.text}</a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
+  <div class="toc-content">
+    <nav id="table-of-contents" aria-label="Table Of Contents">
+      <ul class="py-3">
+        {
+          grouppedHeadings.map((h) => (
+            <li class="list-inside list-disc py-1">
+              <a href={`#${h.slug}`}>{h.text}</a>
+              {h.subheadings.length > 0 && (
+                <ul>
+                  {h.subheadings.map((sub) => (
+                    <li class="list-inside list-disc">
+                      <a href={`#${sub.slug}`}>{sub.text}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
 </details>
 
-<script is:inline>
-  // This script tag is useful only if you want to display the TOC alongside the blog post...
-  // ... and highlight the section that the user is currently reading through.
-  // Feel free to remove this tag if you don't need this type of functionality.
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        // Clean the heading ID the same way we clean the slugs
-        const cleanId = entry.target.id.replace(/^\d+\.?\s*/, "");
-        const headingFragment = `#${cleanId}`;
-        const tocItem = document.querySelector(`a[href="${headingFragment}"]`);
-
-        if (entry.isIntersecting) {
-          const previouslyActivatedItem =
-            document.querySelector(".active-toc-item");
-
-          previouslyActivatedItem?.classList.remove("active-toc-item");
-          tocItem?.classList.add("active-toc-item");
-        } else {
-          const isAnyOtherEntryIntersecting = entries.some(
-            (e) => e.target.id !== entry.target.id && e.isIntersecting,
-          );
-
-          if (isAnyOtherEntryIntersecting) {
-            tocItem?.classList.remove("active-toc-item");
-          }
-        }
-      }
-    },
-    { root: null, rootMargin: "0px", threshold: [1] },
-  );
-
-  const sectionHeadings = document.querySelectorAll(
-    "article > h2, article > h3",
-  );
-
-  for (const heading of sectionHeadings) {
-    observer.observe(heading);
+<style>
+  .toc-content {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-8px);
+    overflow: hidden;
+    transition:
+      max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: max-height, opacity, transform;
   }
 
-  document
-    .querySelectorAll('#table-of-contents a[href^="#"]')
-    .forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
+  .toc-details[open] .toc-content {
+    max-height: 500px; /* Adjust as needed for your content */
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-        const href = this.getAttribute("href")?.slice(1); // Remove the # from href
-        if (!href) return;
-
-        const targetHeading = document.getElementById(href);
-        if (targetHeading) {
-          targetHeading.scrollIntoView({
-            behavior: "smooth",
-          });
-          history.pushState(null, "", `#${href}`);
-        }
-      });
-    });
-</script>
-
-<style>
   summary {
     @apply cursor-pointer rounded-t px-3 py-1.5 font-medium transition-colors;
   }
@@ -117,6 +77,7 @@ const grouppedHeadings = headings.reduce((array, heading) => {
   details[open] summary {
     @apply bg-black/5 dark:bg-white/5;
   }
+
   .active-toc-item {
     font-weight: bold;
   }
