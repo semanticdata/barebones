@@ -1,4 +1,12 @@
 <script is:inline>
+  function getThemeButtons() {
+    return {
+      light: document.getElementById("light-theme-button"),
+      dark: document.getElementById("dark-theme-button"),
+      system: document.getElementById("system-theme-button"),
+    };
+  }
+
   function init() {
     preloadTheme();
     onScroll();
@@ -7,27 +15,33 @@
     // addCopyCodeButtons();
 
     const backToTop = document.getElementById("back-to-top");
-    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+    // Add null check for backToTop
+    if (backToTop) {
+      backToTop.addEventListener("click", (event) => scrollToTop(event));
+    } else {
+      console.warn("Element with ID 'back-to-top' not found.");
+    }
 
-    const themeButtons = {
-      light: document.getElementById("light-theme-button"),
-      dark: document.getElementById("dark-theme-button"),
-      system: document.getElementById("system-theme-button"),
-    };
+    const themeButtons = getThemeButtons();
 
     Object.entries(themeButtons).forEach(([theme, button]) => {
-      button?.addEventListener("click", () => {
-        localStorage.setItem("theme", theme);
-        if (theme === "system") {
-          const isDark = window.matchMedia(
-            "(prefers-color-scheme: dark)",
-          ).matches;
-          toggleTheme(isDark);
-        } else {
-          toggleTheme(theme === "dark");
-        }
-        updateThemeButtons();
-      });
+      // Add null check for button
+      if (button) {
+        button.addEventListener("click", () => {
+          localStorage.setItem("theme", theme);
+          if (theme === "system") {
+            const isDark = window.matchMedia(
+              "(prefers-color-scheme: dark)",
+            ).matches;
+            toggleTheme(isDark);
+          } else {
+            toggleTheme(theme === "dark");
+          }
+          updateThemeButtons();
+        });
+      } else {
+        console.warn(`Theme button element for '${theme}' not found.`);
+      }
     });
 
     window
@@ -42,21 +56,34 @@
   }
 
   function updateThemeButtons() {
-    const theme = localStorage.getItem("theme") || "light";
-    const themeButtons = {
-      light: document.getElementById("light-theme-button"),
-      dark: document.getElementById("dark-theme-button"),
-      system: document.getElementById("system-theme-button"),
-    };
+    const theme = localStorage.getItem("theme") || "system"; // Default to system if nothing set
+    const themeButtons = getThemeButtons();
 
     Object.values(themeButtons).forEach((button) => {
-      button?.classList.remove("bg-black/15", "dark:bg-white/5");
+      // Add null check
+      if (button) {
+        button.classList.remove("bg-black/15", "dark:bg-white/5");
+      }
     });
 
-    themeButtons[theme]?.classList.add("bg-black/15", "dark:bg-white/5");
+    const activeButton = themeButtons[theme];
+    // Add null check
+    if (activeButton) {
+      activeButton.classList.add("bg-black/15", "dark:bg-white/5");
+    } else {
+       // Handle case where the stored theme doesn't match an existing button ID
+       // This might happen if button IDs change or localStorage has old data.
+       // Maybe default to 'system' visually if the specific button isn't found.
+       if (themeButtons.system) {
+         themeButtons.system.classList.add("bg-black/15", "dark:bg-white/5");
+       }
+       console.warn(`Active theme button element for stored theme '${theme}' not found.`);
+    }
   }
 
   function animate() {
+    // Consider adding a comment explaining the staggered effect
+    // Stagger animation for elements with the 'animate' class
     const animateElements = document.querySelectorAll(".animate");
 
     animateElements.forEach((element, index) => {
@@ -90,12 +117,20 @@
   function preloadTheme() {
     const userTheme = localStorage.theme;
 
+    // Explicitly check for undefined or null localStorage theme
     if (userTheme === "light" || userTheme === "dark") {
       toggleTheme(userTheme === "dark");
-    } else {
+    } else { // Includes 'system' or undefined/null
       const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       toggleTheme(isDark);
+      // If theme was undefined/null, explicitly set it to 'system' in localStorage
+      // to ensure consistency after first load.
+      if (!userTheme) {
+        localStorage.setItem("theme", "system");
+      }
     }
+    // Update buttons immediately after preloading
+    updateThemeButtons();
   }
 
   // function addCopyCodeButtons() {
@@ -154,5 +189,6 @@
 
   document.addEventListener("DOMContentLoaded", () => init());
   document.addEventListener("astro:after-swap", () => init());
+  // Call preloadTheme directly on script load for immediate effect before DOMContentLoaded
   preloadTheme();
 </script>
