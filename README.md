@@ -21,7 +21,7 @@ My personal website and blog built with [Astro](https://astro.build/). Features 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/miguelpimentel-do.git
+git clone https://github.com/semanticdata/barebones.git
 ```
 
 2. Install dependencies:
