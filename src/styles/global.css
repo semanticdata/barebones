@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  /* Theme Variables
-  ----------------------------------------- */
+
+  /* Theme Variables ----------------------------------------- */
   :root {
     /* Light theme colors (default) */
     --light-mode-background: 240 240 240;
@@ -71,10 +71,8 @@
 
   .prose table thead th,
   .prose table tfoot th {
-    background-color: light-dark(
-      rgb(var(--dark-mode-foreground-muted)),
-      rgb(var(--light-mode-foreground-muted))
-    );
+    background-color: light-dark(rgb(var(--dark-mode-foreground-muted)),
+        rgb(var(--light-mode-foreground-muted)));
   }
 
   .prose table th,
@@ -132,17 +130,20 @@
 
   @media (prefers-reduced-motion: no-preference) {
     .animate {
-      @apply transition-all; /* Ensure transitions are applied only if user prefers motion */
+      @apply transition-all;
+      /* Ensure transitions are applied only if user prefers motion */
     }
   }
 
   /* Back to Top Button
   ----------------------------------------- */
   html #back-to-top {
-    @apply pointer-events-none opacity-0 transition-opacity duration-300 ease-in-out; /* Disables pointer events and sets opacity to 0 with a smooth transition */
+    @apply pointer-events-none opacity-0 transition-opacity duration-300 ease-in-out;
+    /* Disables pointer events and sets opacity to 0 with a smooth transition */
   }
 
   html.scrolled #back-to-top {
-    @apply pointer-events-auto opacity-100 transition-opacity duration-300 ease-in-out; /* Enables pointer events and sets opacity to 100 with a smooth transition */
+    @apply pointer-events-auto opacity-100 transition-opacity duration-300 ease-in-out;
+    /* Enables pointer events and sets opacity to 100 with a smooth transition */
   }
 }

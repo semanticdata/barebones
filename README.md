@@ -14,23 +14,25 @@ My personal website and blog built with [Astro](https://astro.build/). Features 
 - 📊 **Analytics Ready** - Privacy-focused analytics setup
 - 🎨 **Tailwind CSS** - For styling and rapid development
 
-## Getting Started
+## Development
+
+This project is built with [Astro](https://astro.build/) and uses [Tailwind CSS](https://tailwindcss.com/) for styling. It is designed to be a simple, fast, and efficient personal website and blog.
 
 ### Installation
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/semanticdata/barebones.git
-```
+    ```shell
+    git clone https://github.com/semanticdata/barebones.git
+    ```
 
 2. Install dependencies:
 
-```bash
-npm install
-```
+    ```shell
+    npm install
+    ```
 
-## Useful Commands
+### Useful Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -43,7 +45,7 @@ All commands are run from the root of the project, from a terminal:
 | `npx astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npx astro -- --help` | Get help using the Astro CLI                     |
 
-## Changes from Upstream
+### Changes from Upstream
 
 - [Table of Contents](./src/components/TableOfContents.astro)
 - [Links/Buttons](./src/components/Link.astro)

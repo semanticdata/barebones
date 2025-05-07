@@ -66,7 +66,7 @@ In contrast, Lake Enriquillo, situated at 44 meters (144 feet) below sea level, 
 
 Carnaval in the Dominican Republic is a vibrant and colorful celebration that takes place every February. Each region of the country brings its unique flavor to the festivities, with parades, music, dancing, and elaborate costumes that reflect a blend of African, Taíno, and Spanish cultural influences. The event culminates on February 27, the Dominican Independence Day, symbolizing national pride and cultural heritage.
 
-## 10. Go Whale Watching in Samana Bay!
+## 10. Go Whale Watching in Samana Bay
 
 ![Humpback whale breacking in Samana Bay](./humpback-whale-breaching-samana.webp)
 
