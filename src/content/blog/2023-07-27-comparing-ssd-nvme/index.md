@@ -12,8 +12,8 @@ The main goal of this post was to aid in selecting SSD, and NVMe drives during a
 
 1. MLC V-NAND is the best option.
 2. TLC is equivalent to V-NAND, and viceversa.
-4. QLC is cheap but a _little_ less reliable.
-5. 3D NAND is your basic entry point to SSDs.
+3. QLC is cheap but a _little_ less reliable.
+4. 3D NAND is your basic entry point to SSDs.
 
 ### 3D NAND
 

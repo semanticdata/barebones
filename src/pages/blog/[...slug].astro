@@ -30,7 +30,7 @@ const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .sort(
     (a, b) =>
-      b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf()
+      b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf(),
   );
 
 function getNextPost() {
