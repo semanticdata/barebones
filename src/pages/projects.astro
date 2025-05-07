@@ -8,16 +8,36 @@ import SeoPage from "@/components/SeoPage.astro";
 import Footer from "@/components/Footer.astro";
 
 const projects = (await getCollection("projects")).sort((b, a) =>
-  b.data.title.localeCompare(a.data.title),
+  b.data.title.localeCompare(a.data.title)
 );
 ---
 
 <BaseLayout>
   <SeoPage slot="head" title="Projects" />
   <h1 class="animate mb-4">Projects</h1>
+  <p class="animate mb-4">
+    I have worked on a variety of projects, ranging from web applications to
+    infrastructure and street improvement projects. Here are some of the
+    highlights.
+  </p>
+  <h2 class="animate mb-4">Software</h2>
   <section class="animate flex-1">
     <ul class="grid list-none gap-2 p-0">
-      {projects.map((project) => <Project project={project} />)}
+      {
+        projects
+          .filter((project) => project.data.category === "software")
+          .map((project) => <Project project={project} />)
+      }
+    </ul>
+  </section>
+  <h2 class="animate mb-4">Infrastructure</h2>
+  <section class="animate flex-1">
+    <ul class="grid list-none gap-2 p-0">
+      {
+        projects
+          .filter((project) => project.data.category === "infrastructure")
+          .map((project) => <Project project={project} />)
+      }
     </ul>
   </section>
   <Footer />

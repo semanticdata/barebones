@@ -23,6 +23,7 @@ const projects = defineCollection({
       description: z.string(),
       publicationDate: z.coerce.date().optional(),
       url: z.string(),
+      category: z.string(),
     }),
 });
 
