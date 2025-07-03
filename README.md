@@ -26,3 +26,12 @@ My personal website and blog built with [Astro](https://astro.build/). Features 
 - Full-bleed effect for codeblocks on small screens
 - [404 Page](./src/pages/404.astro)
 - [Previous/Next Blog post navigation](./src/components/PostNavigation.astro)
+
+## Special Thanks
+
+- [Astro](https://astro.build/) - For the framework
+- [Tailwind CSS](https://tailwindcss.com/) - For the utility-first CSS
+- [MDX](https://mdxjs.com/) - For Markdown with JSX
+- [Prettier](https://prettier.io/) - For code formatting
+- [ESLint](https://eslint.org/) - For linting
+- [Vercel](https://vercel.com/) - For hosting
