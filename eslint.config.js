@@ -1,14 +1,24 @@
-import eslintPluginAstro from "eslint-plugin-astro";
-import jsxA11y from "eslint-plugin-jsx-a11y";
+// eslint.config.js
+import eslintPluginAstro from 'eslint-plugin-astro';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 export default [
-  // add more generic rule sets here, such as:
-  // js.configs.recommended,
-  ...eslintPluginAstro.configs.recommended,
+  // 1. The recommended Astro config set. It includes parsing and core rules.
+  ...eslintPluginAstro.configs['flat/recommended'],
+
+  // 2. The recommended accessibility rules.
+  // The plugin exposes a pre-made flat config object.
+  jsxA11y.flatConfigs.recommended,
+
+  // 3. (Optional) Your own custom rules can go in a final object.
+  // This is where you override things or add your personal preferences.
   {
-    plugins: { "jsx-a11y": jsxA11y },
     rules: {
-      ...jsxA11y.configs.recommended.rules,
+      // Example: Enforce that all images have explicit dimensions
+      // 'astro/img-class-primitives': 'error',
+
+      // Example: Downgrade a rule from an error to a warning
+      'jsx-a11y/click-events-have-key-events': 'warn',
     },
   },
 ];
