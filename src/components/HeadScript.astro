@@ -71,13 +71,15 @@
     if (activeButton) {
       activeButton.classList.add("bg-black/15", "dark:bg-white/5");
     } else {
-       // Handle case where the stored theme doesn't match an existing button ID
-       // This might happen if button IDs change or localStorage has old data.
-       // Maybe default to 'system' visually if the specific button isn't found.
-       if (themeButtons.system) {
-         themeButtons.system.classList.add("bg-black/15", "dark:bg-white/5");
-       }
-       console.warn(`Active theme button element for stored theme '${theme}' not found.`);
+      // Handle case where the stored theme doesn't match an existing button ID
+      // This might happen if button IDs change or localStorage has old data.
+      // Maybe default to 'system' visually if the specific button isn't found.
+      if (themeButtons.system) {
+        themeButtons.system.classList.add("bg-black/15", "dark:bg-white/5");
+      }
+      console.warn(
+        `Active theme button element for stored theme '${theme}' not found.`,
+      );
     }
   }
 
@@ -120,7 +122,8 @@
     // Explicitly check for undefined or null localStorage theme
     if (userTheme === "light" || userTheme === "dark") {
       toggleTheme(userTheme === "dark");
-    } else { // Includes 'system' or undefined/null
+    } else {
+      // Includes 'system' or undefined/null
       const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       toggleTheme(isDark);
       // If theme was undefined/null, explicitly set it to 'system' in localStorage

@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-
   /* Theme Variables ----------------------------------------- */
   :root {
     /* Light theme colors (default) */
@@ -72,8 +71,10 @@
 
   .prose table thead th,
   .prose table tfoot th {
-    background-color: light-dark(rgb(var(--dark-mode-foreground-muted)),
-        rgb(var(--light-mode-foreground-muted)));
+    background-color: light-dark(
+      rgb(var(--dark-mode-foreground-muted)),
+      rgb(var(--light-mode-foreground-muted))
+    );
   }
 
   .prose table th,

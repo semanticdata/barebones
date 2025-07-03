@@ -8,7 +8,7 @@ import SeoPage from "@/components/SeoPage.astro";
 import Footer from "@/components/Footer.astro";
 
 const projects = (await getCollection("projects")).sort((b, a) =>
-  b.data.title.localeCompare(a.data.title)
+  b.data.title.localeCompare(a.data.title),
 );
 ---
 

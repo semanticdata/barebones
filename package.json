@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "lint": "eslint 'src/**/*.{js,ts,astro}'"
+    "lint": "eslint 'src/**/*.{js,ts,astro}'",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
