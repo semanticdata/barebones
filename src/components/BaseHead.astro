@@ -44,9 +44,14 @@ import HeadScript from "@/components/HeadScript.astro";
 
   <slot />
 
-  <script
-    is:inline
-    defer
-    src="https://umami.itscattime.com/script.js"
-    data-website-id="7f4de10b-dde7-481e-965f-193bb94250b1"></script>
+  {
+    import.meta.env.PROD && (
+      <script
+        is:inline
+        defer
+        src="https://umami.itscattime.com/script.js"
+        data-website-id="7f4de10b-dde7-481e-965f-193bb94250b1"
+      />
+    )
+  }
 </head>
