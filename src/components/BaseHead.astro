@@ -12,20 +12,12 @@ import HeadScript from "@/components/HeadScript.astro";
   <meta name="HandheldFriendly" content="True" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="referrer" content="no-referrer-when-downgrade" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, user-scalable=yes"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="generator" content={Astro.generator} />
 
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link
-    rel="alternate"
-    type="application/rss+xml"
-    title={SITE.title}
-    href={new URL("rss.xml", Astro.site)}
-  />
+  <link rel="alternate" type="application/rss+xml" title={SITE.title} href={new URL("rss.xml", Astro.site)} />
 
   <!-- Fallback for non-JS. This implements a "basic" version of the `animate` class. -->
   <noscript>
@@ -52,9 +44,9 @@ import HeadScript from "@/components/HeadScript.astro";
 
   <slot />
 
-  <!-- <script
+  <script
     is:inline
     defer
     src="https://umami.itscattime.com/script.js"
-    data-website-id="7f4de10b-dde7-481e-965f-193bb94250b1"></script> -->
+    data-website-id="7f4de10b-dde7-481e-965f-193bb94250b1"></script>
 </head>

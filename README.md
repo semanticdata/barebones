@@ -35,3 +35,4 @@ My personal website and blog built with [Astro](https://astro.build/). Features 
 - [Prettier](https://prettier.io/) - For code formatting
 - [ESLint](https://eslint.org/) - For linting
 - [Vercel](https://vercel.com/) - For hosting
+- [Umami](https://umami.is/) - For analytics
