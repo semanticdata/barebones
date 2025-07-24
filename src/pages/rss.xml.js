@@ -11,6 +11,10 @@ export async function GET(context) {
     title: SITE.title,
     description: SITE.description,
     site: context.site,
+    xmlns: {
+      atom: "http://www.w3.org/2005/Atom",
+    },
+    customData: `<atom:link href="${context.site}rss.xml" rel="self" type="application/rss+xml" />`,
     items: blog.map((post) => ({
       title: post.data.title,
       description: post.data.description,
