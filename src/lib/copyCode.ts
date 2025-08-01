@@ -1,6 +1,4 @@
 export function initCopyCodeButtons(): void {
-  const copyButtonLabel = "📋";
-  
   // Use event delegation for better performance
   document.addEventListener("click", async (event: Event) => {
     const target = event.target as HTMLElement;
@@ -40,7 +38,8 @@ async function copyCode(codeBlock: HTMLPreElement, copyButton: HTMLElement): Pro
 function addCopyCodeButtons(): void {
   const codeBlocks = document.querySelectorAll("pre:not([data-copy-button-added])");
 
-  codeBlocks.forEach((codeBlock: HTMLPreElement) => {
+  codeBlocks.forEach((element) => {
+    const codeBlock = element as HTMLPreElement;
     const wrapper = document.createElement("div");
     wrapper.style.position = "relative";
 
