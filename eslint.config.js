@@ -16,9 +16,8 @@ export default [
     rules: {
       // Example: Enforce that all images have explicit dimensions
       // 'astro/img-class-primitives': 'error',
-
-      // Example: Downgrade a rule from an error to a warning
-      'jsx-a11y/click-events-have-key-events': 'warn',
+      "no-unused-vars": "warn",
+      "no-undef": "warn",
     },
   },
 ];

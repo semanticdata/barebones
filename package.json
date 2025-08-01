@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "lint": "eslint 'src/**/*.{js,ts,astro}'",
+    "lint": "npx eslint src/**/*.{js,ts,astro}",
     "format": "prettier . --write",
     "format:check": "prettier . --check"
   },
