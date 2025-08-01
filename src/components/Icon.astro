@@ -1,0 +1,84 @@
+---
+export interface Props {
+  name: "arrow-left" | "arrow-right" | "arrow-up" | "sun" | "moon" | "monitor";
+  size?: "sm" | "md" | "lg";
+  class?: string;
+}
+
+const { name, size = "md", class: additionalClasses = "" } = Astro.props;
+
+const sizeClasses = {
+  sm: "size-4",
+  md: "size-5",
+  lg: "size-6",
+};
+
+const baseClasses = "fill-none stroke-current transition-colors duration-300 ease-in-out";
+const combinedClasses = [baseClasses, sizeClasses[size], additionalClasses].filter(Boolean).join(" ");
+
+const icons = {
+  "arrow-left": {
+    viewBox: "0 0 24 24",
+    strokeWidth: "2",
+    paths: [
+      '<line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 scale-x-0 transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-x-100 group-focus-visible:translate-x-0 group-focus-visible:scale-x-100" />',
+      '<polyline points="12 5 5 12 12 19" class="translate-x-1 transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-focus-visible:translate-x-0" />',
+    ],
+  },
+  "arrow-right": {
+    viewBox: "0 0 24 24",
+    strokeWidth: "2",
+    paths: [
+      '<line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 scale-x-0 transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-x-100 group-focus-visible:translate-x-0 group-focus-visible:scale-x-100" />',
+      '<polyline points="12 5 19 12 12 19" class="-translate-x-1 transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-focus-visible:translate-x-0" />',
+    ],
+  },
+  "arrow-up": {
+    viewBox: "0 0 24 24",
+    strokeWidth: "2",
+    paths: [
+      '<line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 scale-x-0 transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-x-100 group-focus-visible:translate-x-0 group-focus-visible:scale-x-100" />',
+      '<polyline points="12 5 5 12 12 19" class="translate-x-1 transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-focus-visible:translate-x-0" />',
+    ],
+  },
+  sun: {
+    viewBox: "0 0 24 24",
+    strokeWidth: "1.5",
+    paths: [
+      '<circle cx="12" cy="12" r="5" />',
+      '<line x1="12" y1="1" x2="12" y2="3" />',
+      '<line x1="12" y1="21" x2="12" y2="23" />',
+      '<line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />',
+      '<line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />',
+      '<line x1="1" y1="12" x2="3" y2="12" />',
+      '<line x1="21" y1="12" x2="23" y2="12" />',
+      '<line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />',
+      '<line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />',
+    ],
+  },
+  moon: {
+    viewBox: "0 0 24 24",
+    strokeWidth: "1.5",
+    paths: ['<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />'],
+  },
+  monitor: {
+    viewBox: "0 0 24 24",
+    strokeWidth: "1.5",
+    paths: [
+      '<rect x="2" y="3" width="20" height="14" rx="2" ry="2" />',
+      '<line x1="8" y1="21" x2="16" y2="21" />',
+      '<line x1="12" y1="17" x2="12" y2="21" />',
+    ],
+  },
+};
+
+const icon = icons[name];
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox={icon.viewBox}
+  stroke-width={icon.strokeWidth}
+  class={combinedClasses}
+  set:html={icon.paths.join("")}
+/>

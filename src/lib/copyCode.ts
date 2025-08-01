@@ -3,13 +3,13 @@ export function initCopyCodeButtons(): void {
   document.addEventListener("click", async (event: Event) => {
     const target = event.target as HTMLElement;
     if (!target.classList.contains("copy-code")) return;
-    
+
     const codeBlock = target.closest("pre");
     if (!codeBlock) return;
-    
+
     await copyCode(codeBlock, target);
   });
-  
+
   addCopyCodeButtons();
 }
 
@@ -21,14 +21,14 @@ async function copyCode(codeBlock: HTMLPreElement, copyButton: HTMLElement): Pro
   try {
     await navigator.clipboard.writeText(textToCopy);
     copyButton.innerText = "✅";
-    
+
     setTimeout(() => {
       copyButton.innerText = "📋";
     }, 2000);
   } catch (error) {
     console.error("Failed to copy code:", error);
     copyButton.innerText = "❌";
-    
+
     setTimeout(() => {
       copyButton.innerText = "📋";
     }, 2000);

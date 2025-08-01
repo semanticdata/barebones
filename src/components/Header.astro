@@ -15,7 +15,7 @@ import Button from "./Button.astro";
         Object.keys(NAV_LINKS).map((navItemKey) => {
           return (
             <li>
-              <Button href={NAV_LINKS[navItemKey].path}>
+              <Button href={NAV_LINKS[navItemKey].path} style="text-decoration: none;">
                 {NAV_LINKS[navItemKey].label}
               </Button>
             </li>

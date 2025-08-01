@@ -1,17 +1,22 @@
 ---
 import { SOCIAL_LINKS } from "@/siteConfig";
 
-const socialLinksArray = Object.keys(SOCIAL_LINKS).map((key) => ({
-  url: SOCIAL_LINKS[key].url,
-  label: SOCIAL_LINKS[key].label,
+interface SocialLink {
+  url: string;
+  label: string;
+}
+
+const socialLinksArray: SocialLink[] = Object.keys(SOCIAL_LINKS).map((key) => ({
+  url: SOCIAL_LINKS[key as keyof typeof SOCIAL_LINKS].url,
+  label: SOCIAL_LINKS[key as keyof typeof SOCIAL_LINKS].label,
 }));
 ---
 
 <h2 class="animate mb-4 text-lg">Contact me</h2>
 <section class="animate flex-1">
   <p>
-    If you want to get in touch with me about something or just to say hi, reach
-    out on social media or send me an email.
+    If you want to get in touch with me about something or just to say hi, reach out on social media or send me an
+    email.
   </p>
   <ul class="mt-4 grid list-none gap-2 p-0">
     {
@@ -20,9 +25,7 @@ const socialLinksArray = Object.keys(SOCIAL_LINKS).map((key) => ({
           <a
             href={link.url}
             target={link.url.startsWith("http") ? "_blank" : undefined}
-            rel={
-              link.url.startsWith("http") ? "noopener noreferrer" : undefined
-            }
+            rel={link.url.startsWith("http") ? "noopener noreferrer" : undefined}
           >
             {link.label}
           </a>

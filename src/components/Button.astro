@@ -1,32 +1,77 @@
 ---
-type Props = {
-  href: string;
+export interface Props {
+  href?: string;
+  variant?: "primary" | "nav" | "icon" | "link";
+  size?: "sm" | "md" | "lg";
   external?: boolean;
   underline?: boolean;
   group?: boolean;
-};
+  as?: "a" | "button";
+  type?: "button" | "submit" | "reset";
+  class?: string;
+}
 
 const {
   href,
-  external,
-  underline = true,
+  variant = "primary",
+  size = "md",
+  external = false,
+  underline = false,
   group = false,
+  as = href ? "a" : "button",
+  type = "button",
+  class: additionalClasses = "",
   ...rest
 } = Astro.props;
 
-const baseClasses =
-  "dark:border-white/50 bg-black/5 hover:bg-black dark:hover:bg-white focus:bg-black dark:focus:bg-white dark:bg-white/5 shadow-sm my-4 px-2 py-1 border border-black rounded focus:ring focus:ring-purple-900 dark:focus:ring-purple-900 focus:ring-offset-2 w-fit h-fit font-medium text-black text-md hover:text-white dark:hover:text-black focus:text-white dark:focus:text-black dark:text-white no-underline transition-colors duration-300 focus:outline-none size-9";
+// Base classes shared across all variants
+const baseClasses = [
+  "relative cursor-pointer rounded border border-black transition-colors duration-300 ease-in-out",
+  "bg-black/5 hover:bg-black focus-visible:bg-black/5",
+  "dark:border-white/50 dark:bg-white/5 dark:hover:bg-white dark:focus-visible:bg-white/5",
+  "text-black hover:text-white focus-visible:text-black",
+  "dark:text-white dark:hover:text-black dark:focus-visible:text-white",
+].join(" ");
+
+// Variant-specific classes
+const variantClasses = {
+  primary:
+    "font-medium px-4 py-2 my-4 w-fit h-fit shadow-sm focus:ring focus:ring-purple-900 dark:focus:ring-purple-900 focus:ring-offset-2 focus:outline-none",
+  nav: "flex flex-nowrap px-4 py-3 no-underline",
+  icon: "flex size-9 items-center justify-center",
+  link: "inline-flex px-2 py-1 no-underline font-medium",
+} as const;
+
+// Size classes
+const sizeClasses = {
+  sm: "text-sm",
+  md: "text-md",
+  lg: "text-lg",
+} as const;
+
 const underlineClass = underline ? "underline underline-offset-[3px]" : "";
 const groupClass = group ? "group" : "";
 
-const combinedClasses = `${baseClasses} ${underlineClass} ${groupClass}`.trim();
+const combinedClasses = [
+  baseClasses,
+  variantClasses[variant as keyof typeof variantClasses],
+  sizeClasses[size as keyof typeof sizeClasses],
+  underlineClass,
+  groupClass,
+  additionalClasses,
+]
+  .filter(Boolean)
+  .join(" ");
+
+const Element = as;
 ---
 
-<a
-  href={href}
-  target={external ? "_blank" : "_self"}
+<Element
+  href={as === "a" ? href : undefined}
+  target={as === "a" && external ? "_blank" : undefined}
+  type={as === "button" ? type : undefined}
   class={combinedClasses}
   {...rest}
 >
   <slot />
-</a>
+</Element>

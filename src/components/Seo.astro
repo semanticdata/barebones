@@ -14,18 +14,13 @@ const { title, description, post } = Astro.props;
 const isPost = !!post;
 
 // Set title and description based on whether it's a post or page
-const pageTitle = isPost 
-  ? `${post.data.title || SITE.title} | ${SITE.title}`
-  : title || SITE.title;
+const pageTitle = isPost ? `${post.data.title || SITE.title} | ${SITE.title}` : title || SITE.title;
 
-const pageDescription = isPost 
-  ? post.data.description || SITE.description
-  : description || SITE.description;
+const pageDescription = isPost ? post.data.description || SITE.description : description || SITE.description;
 
 // Set OG image - use post image if available, otherwise default
-const ogImage = isPost && post.data.image?.src 
-  ? `${SITE.url}${post.data.image.src}`
-  : new URL("./og.jpg", Astro.site).toString();
+const ogImage =
+  isPost && post.data.image?.src ? `${SITE.url}${post.data.image.src}` : new URL("./og.jpg", Astro.site).toString();
 
 const ogImageAlt = isPost ? post.data.title || SITE.title : pageTitle;
 ---
@@ -48,9 +43,4 @@ const ogImageAlt = isPost ? post.data.title || SITE.title : pageTitle;
 <meta name="twitter:image:alt" content={ogImageAlt} />
 <meta name="twitter:card" content="summary_large_image" />
 
-{
-  isPost && post.data.tags &&
-    post.data.tags.map((tag: string) => (
-      <meta property="article:tag" content={tag} />
-    ))
-}
+{isPost && post.data.tags && post.data.tags.map((tag: string) => <meta property="article:tag" content={tag} />)}

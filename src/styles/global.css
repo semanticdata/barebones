@@ -4,12 +4,16 @@
 
 /* atkinson-hyperlegible-next-latin-wght-normal */
 @font-face {
-  font-family: 'Atkinson Hyperlegible Next Variable';
+  font-family: "Atkinson Hyperlegible Next Variable";
   font-style: normal;
   font-display: swap;
   font-weight: 200 800;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/atkinson-hyperlegible-next:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/atkinson-hyperlegible-next:vf@latest/latin-wght-normal.woff2)
+    format("woff2-variations");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
 
 @layer base {
@@ -157,5 +161,73 @@
   html.scrolled #back-to-top {
     @apply pointer-events-auto opacity-100 transition-opacity duration-300 ease-in-out;
     /* Enables pointer events and sets opacity to 100 with a smooth transition */
+  }
+}
+
+@layer components {
+  /* Button Base Components */
+  .btn-base {
+    @apply relative cursor-pointer rounded border border-black transition-colors duration-300 ease-in-out;
+    @apply bg-black/5 hover:bg-black focus-visible:bg-black/5;
+    @apply dark:border-white/50 dark:bg-white/5 dark:hover:bg-white dark:focus-visible:bg-white/5;
+    @apply text-black hover:text-white focus-visible:text-black;
+    @apply dark:text-white dark:hover:text-black dark:focus-visible:text-white;
+  }
+
+  .btn-primary {
+    @apply btn-base my-4 h-fit w-fit px-4 py-2 font-medium shadow-sm;
+    @apply focus:outline-none focus:ring focus:ring-purple-900 focus:ring-offset-2 dark:focus:ring-purple-900;
+  }
+
+  .btn-nav {
+    @apply btn-base flex flex-nowrap px-4 py-3 no-underline;
+  }
+
+  .btn-icon {
+    @apply btn-base flex size-9 items-center justify-center;
+  }
+
+  .btn-link {
+    @apply btn-base inline-flex px-2 py-1 font-medium no-underline;
+  }
+
+  /* Icon Components */
+  .icon-base {
+    @apply fill-none stroke-current transition-colors duration-300 ease-in-out;
+  }
+
+  .icon-sm {
+    @apply icon-base size-4;
+  }
+
+  .icon-md {
+    @apply icon-base size-5;
+  }
+
+  .icon-lg {
+    @apply icon-base size-6;
+  }
+
+  /* Theme Button Active State */
+  .theme-btn-active {
+    @apply bg-black/15 dark:bg-white/5;
+  }
+
+  /* Navigation Link Variants */
+  .nav-link-prev {
+    @apply pl-10;
+  }
+
+  .nav-link-next {
+    @apply flex-row-reverse py-4 pr-10;
+  }
+
+  /* Common Layout Patterns */
+  .section-animate {
+    @apply animate;
+  }
+
+  .text-muted {
+    @apply text-lightModeForegroundMuted dark:text-darkModeForegroundMuted;
   }
 }

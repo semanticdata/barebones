@@ -1,60 +1,22 @@
-<button
-  title="Light theme"
-  id="light-theme-button"
-  aria-label="Light theme"
-  class="group flex size-9 cursor-pointer items-center justify-center rounded border border-black bg-black/5 transition-colors duration-300 ease-in-out hover:bg-black hover:text-black focus-visible:bg-black/5 focus-visible:text-black dark:border-white/50 dark:bg-white/5 dark:hover:bg-white dark:hover:text-white dark:focus-visible:bg-white/5 dark:focus-visible:text-white"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    stroke-width="1.5"
-    class="size-5 fill-none stroke-black transition-colors duration-300 ease-in-out group-hover:stroke-white group-focus-visible:stroke-black dark:stroke-white group-hover:dark:stroke-black dark:group-focus-visible:stroke-white"
-  >
-    <circle cx="12" cy="12" r="5"></circle>
-    <line x1="12" y1="1" x2="12" y2="3"></line>
-    <line x1="12" y1="21" x2="12" y2="23"></line>
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-    <line x1="1" y1="12" x2="3" y2="12"></line>
-    <line x1="21" y1="12" x2="23" y2="12"></line>
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-  </svg>
-</button>
-<button
-  title="Dark theme"
-  id="dark-theme-button"
-  aria-label="Dark theme"
-  class="group flex size-9 cursor-pointer items-center justify-center rounded border border-black bg-black/5 transition-colors duration-300 ease-in-out hover:bg-black focus-visible:bg-black/5 dark:border-white/50 dark:bg-white/5 dark:hover:bg-white dark:focus-visible:bg-white/5"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    stroke-width="1.5"
-    class="size-5 fill-none stroke-black transition-colors duration-300 ease-in-out group-hover:stroke-white dark:stroke-white group-hover:dark:stroke-black"
-  >
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-  </svg>
-</button>
-<button
-  title="System theme"
-  id="system-theme-button"
-  aria-label="System theme"
-  class="group flex size-9 cursor-pointer items-center justify-center rounded border border-black bg-black/5 transition-colors duration-300 ease-in-out hover:bg-black focus-visible:bg-black/5 dark:border-white/50 dark:bg-white/5 dark:hover:bg-white dark:focus-visible:bg-white/5"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    class="size-5 stroke-black transition-colors duration-300 ease-in-out group-hover:animate-pulse group-hover:stroke-white group-focus-visible:animate-pulse group-focus-visible:stroke-black dark:stroke-white group-hover:dark:stroke-black dark:group-focus-visible:stroke-white"
-  >
-    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-    <line x1="8" y1="21" x2="16" y2="21"></line>
-    <line x1="12" y1="17" x2="12" y2="21"></line>
-  </svg>
-</button>
+---
+import Button from "@/components/Button.astro";
+import Icon from "@/components/Icon.astro";
+---
+
+<Button variant="icon" group={true} id="light-theme-button" title="Light theme" aria-label="Light theme">
+  <Icon
+    name="sun"
+    class="stroke-black group-hover:stroke-white group-focus-visible:stroke-black dark:stroke-white group-hover:dark:stroke-black dark:group-focus-visible:stroke-white"
+  />
+</Button>
+
+<Button variant="icon" group={true} id="dark-theme-button" title="Dark theme" aria-label="Dark theme">
+  <Icon name="moon" class="stroke-black group-hover:stroke-white dark:stroke-white group-hover:dark:stroke-black" />
+</Button>
+
+<Button variant="icon" group={true} id="system-theme-button" title="System theme" aria-label="System theme">
+  <Icon
+    name="monitor"
+    class="stroke-black group-hover:animate-pulse group-hover:stroke-white group-focus-visible:animate-pulse group-focus-visible:stroke-black dark:stroke-white group-hover:dark:stroke-black dark:group-focus-visible:stroke-white"
+  />
+</Button>
