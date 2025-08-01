@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import Project from "@/components/Project.astro";
-import SeoPage from "@/components/SeoPage.astro";
+import Seo from "@/components/Seo.astro";
 import Footer from "@/components/Footer.astro";
 
 const projects = (await getCollection("projects")).sort((b, a) =>
@@ -13,7 +13,7 @@ const projects = (await getCollection("projects")).sort((b, a) =>
 ---
 
 <BaseLayout>
-  <SeoPage slot="head" title="Projects" />
+  <Seo slot="head" title="Projects" />
   <h1 class="animate mb-4">Projects</h1>
   <p class="animate mb-4">
     I have worked on a variety of projects, ranging from web applications to

@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import Post from "@/components/Post.astro";
-import SeoPage from "@/components/SeoPage.astro";
+import Seo from "@/components/Seo.astro";
 import Button from "@/components/Button.astro";
 import Footer from "@/components/Footer.astro";
 import ContactMe from "@/components/ContactMe.astro";
@@ -18,7 +18,7 @@ const posts = (await getCollection("blog"))
 ---
 
 <BaseLayout>
-  <SeoPage slot="head" />
+  <Seo slot="head" />
   <main>
     <section class="animate">
       <h1 class="animate mb-3 text-xl font-bold">Hi, I'm Miguel!</h1>

@@ -7,7 +7,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import { formatDate } from "@/lib/util";
 
-import SeoPost from "@/components/SeoPost.astro";
+import Seo from "@/components/Seo.astro";
 import TableOfContents from "@/components/TableOfContents.astro";
 import Footer from "@/components/Footer.astro";
 import PostNavigation from "@/components/PostNavigation.astro";
@@ -61,7 +61,7 @@ const { Content, headings } = await render(entry);
 ---
 
 <BaseLayout>
-  <SeoPost slot="head" entry={entry} />
+  <Seo slot="head" post={entry} />
   <h1 class="animate">{entry.data.title}</h1>
   <p class="animate">
     {formatDate(entry.data.publicationDate)}

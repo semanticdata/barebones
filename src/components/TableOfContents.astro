@@ -2,21 +2,14 @@
 // based on: https://gist.github.com/maciejpedzich/000da5c6b3a91290d49a91c9fe940ca3
 
 import type { MarkdownHeading } from "astro";
+import { groupHeadings } from "@/lib/util";
+
 type Props = {
   headings: MarkdownHeading[];
 };
-type HeadingWithSubheadings = MarkdownHeading & {
-  subheadings: MarkdownHeading[];
-};
+
 const { headings } = Astro.props;
-const grouppedHeadings = headings.reduce((array, heading) => {
-  if (heading.depth === 2) {
-    array.push({ ...heading, subheadings: [] });
-  } else if (heading.depth === 3) {
-    array.at(-1)?.subheadings.push(heading);
-  }
-  return array;
-}, [] as HeadingWithSubheadings[]);
+const grouppedHeadings = groupHeadings(headings);
 ---
 
 <details
