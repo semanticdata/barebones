@@ -5,7 +5,9 @@ export type HeadingWithSubheadings = MarkdownHeading & {
   subheadings: MarkdownHeading[];
 };
 
-export function groupHeadings(headings: MarkdownHeading[]): HeadingWithSubheadings[] {
+export function groupHeadings(
+  headings: MarkdownHeading[],
+): HeadingWithSubheadings[] {
   return headings.reduce((array, heading) => {
     if (heading.depth === 2) {
       array.push({ ...heading, subheadings: [] });

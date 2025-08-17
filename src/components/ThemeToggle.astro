@@ -3,18 +3,39 @@ import Button from "@/components/Button.astro";
 import Icon from "@/components/Icon.astro";
 ---
 
-<Button variant="icon" group={true} id="light-theme-button" title="Light theme" aria-label="Light theme">
+<Button
+  variant="icon"
+  group={true}
+  id="light-theme-button"
+  title="Light theme"
+  aria-label="Light theme"
+>
   <Icon
     name="sun"
     class="stroke-black group-hover:stroke-white group-focus-visible:stroke-black dark:stroke-white group-hover:dark:stroke-black dark:group-focus-visible:stroke-white"
   />
 </Button>
 
-<Button variant="icon" group={true} id="dark-theme-button" title="Dark theme" aria-label="Dark theme">
-  <Icon name="moon" class="stroke-black group-hover:stroke-white dark:stroke-white group-hover:dark:stroke-black" />
+<Button
+  variant="icon"
+  group={true}
+  id="dark-theme-button"
+  title="Dark theme"
+  aria-label="Dark theme"
+>
+  <Icon
+    name="moon"
+    class="stroke-black group-hover:stroke-white dark:stroke-white group-hover:dark:stroke-black"
+  />
 </Button>
 
-<Button variant="icon" group={true} id="system-theme-button" title="System theme" aria-label="System theme">
+<Button
+  variant="icon"
+  group={true}
+  id="system-theme-button"
+  title="System theme"
+  aria-label="System theme"
+>
   <Icon
     name="monitor"
     class="stroke-black group-hover:animate-pulse group-hover:stroke-white group-focus-visible:animate-pulse group-focus-visible:stroke-black dark:stroke-white group-hover:dark:stroke-black dark:group-focus-visible:stroke-white"

@@ -2,7 +2,7 @@
 export const THEME_VALUES = {
   LIGHT: "light",
   DARK: "dark",
-  SYSTEM: "system"
+  SYSTEM: "system",
 } as const;
 
 export const CSS_CLASSES = {
@@ -10,21 +10,21 @@ export const CSS_CLASSES = {
   DARK_MODE: "dark",
   ANIMATE: "animate",
   SHOW: "show",
-  ACTIVE_THEME: ["bg-black/15", "dark:bg-white/5"]
+  ACTIVE_THEME: ["bg-black/15", "dark:bg-white/5"],
 } as const;
 
 export const ELEMENT_IDS = {
   BACK_TO_TOP: "back-to-top",
   LIGHT_THEME_BUTTON: "light-theme-button",
   DARK_THEME_BUTTON: "dark-theme-button",
-  SYSTEM_THEME_BUTTON: "system-theme-button"
+  SYSTEM_THEME_BUTTON: "system-theme-button",
 } as const;
 
 export const MEDIA_QUERIES = {
-  PREFERS_DARK: "(prefers-color-scheme: dark)"
+  PREFERS_DARK: "(prefers-color-scheme: dark)",
 } as const;
 
-export type ThemeValue = typeof THEME_VALUES[keyof typeof THEME_VALUES];
+export type ThemeValue = (typeof THEME_VALUES)[keyof typeof THEME_VALUES];
 
 export function initUI(): void {
   initTheme();
@@ -104,14 +104,19 @@ export function initThemeButtons(): void {
 
 function getThemeButtons(): Record<ThemeValue, HTMLElement | null> {
   return {
-    [THEME_VALUES.LIGHT]: document.getElementById(ELEMENT_IDS.LIGHT_THEME_BUTTON),
+    [THEME_VALUES.LIGHT]: document.getElementById(
+      ELEMENT_IDS.LIGHT_THEME_BUTTON,
+    ),
     [THEME_VALUES.DARK]: document.getElementById(ELEMENT_IDS.DARK_THEME_BUTTON),
-    [THEME_VALUES.SYSTEM]: document.getElementById(ELEMENT_IDS.SYSTEM_THEME_BUTTON),
+    [THEME_VALUES.SYSTEM]: document.getElementById(
+      ELEMENT_IDS.SYSTEM_THEME_BUTTON,
+    ),
   };
 }
 
 function updateThemeButtons(): void {
-  const theme = (localStorage.getItem("theme") as ThemeValue) || THEME_VALUES.SYSTEM;
+  const theme =
+    (localStorage.getItem("theme") as ThemeValue) || THEME_VALUES.SYSTEM;
   const themeButtons = getThemeButtons();
 
   Object.values(themeButtons).forEach((button) => {
@@ -129,7 +134,9 @@ function updateThemeButtons(): void {
     if (systemButton) {
       systemButton.classList.add(...CSS_CLASSES.ACTIVE_THEME);
     }
-    console.warn(`Active theme button element for stored theme '${theme}' not found.`);
+    console.warn(
+      `Active theme button element for stored theme '${theme}' not found.`,
+    );
   }
 }
 
@@ -163,7 +170,10 @@ function preloadTheme(): void {
   updateThemeButtons();
 }
 
-function debounce<T extends (...args: unknown[]) => void>(func: T, wait: number): T {
+function debounce<T extends (...args: unknown[]) => void>(
+  func: T,
+  wait: number,
+): T {
   let timeout: number;
   return ((...args: Parameters<T>) => {
     const later = () => {

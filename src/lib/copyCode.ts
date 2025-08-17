@@ -13,7 +13,10 @@ export function initCopyCodeButtons(): void {
   addCopyCodeButtons();
 }
 
-async function copyCode(codeBlock: HTMLPreElement, copyButton: HTMLElement): Promise<void> {
+async function copyCode(
+  codeBlock: HTMLPreElement,
+  copyButton: HTMLElement,
+): Promise<void> {
   const codeText = codeBlock.innerText;
   const buttonText = copyButton.innerText;
   const textToCopy = codeText.replace(buttonText, "");
@@ -36,7 +39,9 @@ async function copyCode(codeBlock: HTMLPreElement, copyButton: HTMLElement): Pro
 }
 
 function addCopyCodeButtons(): void {
-  const codeBlocks = document.querySelectorAll("pre:not([data-copy-button-added])");
+  const codeBlocks = document.querySelectorAll(
+    "pre:not([data-copy-button-added])",
+  );
 
   codeBlocks.forEach((element) => {
     const codeBlock = element as HTMLPreElement;
