@@ -13,8 +13,11 @@ const sizeClasses = {
   lg: "size-6",
 };
 
-const baseClasses = "fill-none stroke-current transition-colors duration-300 ease-in-out";
-const combinedClasses = [baseClasses, sizeClasses[size], additionalClasses].filter(Boolean).join(" ");
+const baseClasses =
+  "fill-none stroke-current transition-colors duration-300 ease-in-out";
+const combinedClasses = [baseClasses, sizeClasses[size], additionalClasses]
+  .filter(Boolean)
+  .join(" ");
 
 const icons = {
   "arrow-left": {

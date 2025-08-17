@@ -12,7 +12,9 @@ const { headings } = Astro.props;
 const grouppedHeadings = groupHeadings(headings);
 ---
 
-<details class="animate toc-details my-8 rounded border border-black dark:border-white/50">
+<details
+  class="animate toc-details my-8 rounded border border-black dark:border-white/50"
+>
   <summary>Table of Contents</summary>
   <div class="toc-content">
     <nav id="table-of-contents" aria-label="Table Of Contents">

@@ -1,10 +1,10 @@
 // eslint.config.js
-import eslintPluginAstro from 'eslint-plugin-astro';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
+import eslintPluginAstro from "eslint-plugin-astro";
+import jsxA11y from "eslint-plugin-jsx-a11y";
 
 export default [
   // 1. The recommended Astro config set. It includes parsing and core rules.
-  ...eslintPluginAstro.configs['flat/recommended'],
+  ...eslintPluginAstro.configs["flat/recommended"],
 
   // 2. The recommended accessibility rules.
   // The plugin exposes a pre-made flat config object.

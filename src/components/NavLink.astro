@@ -18,7 +18,12 @@ const iconClasses = `absolute top-1/2 -translate-y-1/2 stroke-2 ${isPrev ? "left
 
 {
   post?.id ? (
-    <Button href={`/blog/${post.id}`} variant="nav" group={true} class={additionalClasses}>
+    <Button
+      href={`/blog/${post.id}`}
+      variant="nav"
+      group={true}
+      class={additionalClasses}
+    >
       <Icon name={iconName} class={iconClasses} />
       <div class="flex items-center text-sm">{post.data.title}</div>
     </Button>
