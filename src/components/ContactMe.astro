@@ -26,7 +26,13 @@ const socialLinksArray: SocialLink[] = Object.keys(SOCIAL_LINKS).map((key) => ({
             href={link.url}
             target={link.url.startsWith("http") ? "_blank" : undefined}
             rel={
-              link.url.startsWith("http") ? "noopener noreferrer" : undefined
+              link.url.startsWith("http") 
+                ? link.label === "Mastodon" 
+                  ? "me noopener noreferrer" 
+                  : "noopener noreferrer"
+                : link.label === "Mastodon" 
+                  ? "me" 
+                  : undefined
             }
           >
             {link.label}
