@@ -51,6 +51,6 @@ export const SOCIAL_LINKS: SocialLinks = {
   },
   mastodon: {
     label: "Mastodon",
-    url: "https://mastodon.social/@semanticdata",
+    url: "https://social.lol/@database",
   },
 };
