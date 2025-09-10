@@ -18,9 +18,9 @@ interface Props {
 
 export async function getStaticPaths() {
   const blog = await getCollection("blog");
-  return blog.map((entry) => ({
-    params: { slug: entry.id },
-    props: { entry },
+  return blog.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
   }));
 }
 
@@ -35,9 +35,9 @@ const blog = (await getCollection("blog"))
 
 function getNextPost() {
   let postIndex;
-  for (const entry of blog) {
-    if (entry.id === Astro.params.slug) {
-      postIndex = blog.indexOf(entry);
+  for (const post of blog) {
+    if (post.slug === Astro.params.slug) {
+      postIndex = blog.indexOf(post);
       return blog[postIndex + 1];
     }
   }
@@ -45,9 +45,9 @@ function getNextPost() {
 
 function getPrevPost() {
   let postIndex;
-  for (const entry of blog) {
-    if (entry.id === Astro.params.slug) {
-      postIndex = blog.indexOf(entry);
+  for (const post of blog) {
+    if (post.slug === Astro.params.slug) {
+      postIndex = blog.indexOf(post);
       return blog[postIndex - 1];
     }
   }
@@ -56,32 +56,32 @@ function getPrevPost() {
 const nextPost = getNextPost();
 const prevPost = getPrevPost();
 
-const { entry } = Astro.props;
-const { Content, headings } = await render(entry);
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
 ---
 
 <BaseLayout>
-  <Seo slot="head" post={entry} />
-  <h1 class="animate">{entry.data.title}</h1>
+  <Seo slot="head" post={post} />
+  <h1 class="animate">{post.data.title}</h1>
   <p class="animate">
-    {formatDate(entry.data.publicationDate)}
+    {formatDate(post.data.publicationDate)}
   </p>
   <hr class="animate my-8" />
   <div>
     {
-      entry.data.image && (
+      post.data.image && (
         <figure>
           <Image
             id="blog-post-image"
-            src={entry.data.image}
-            alt={entry.data.imageAlt || ""}
+            src={post.data.image}
+            alt={post.data.imageAlt || ""}
             class="animate h-auto w-full rounded shadow-md dark:shadow-white/15"
             loading="eager"
             decoding="async"
             width="608"
             height="405"
           />
-          <figcaption class="animate text-sm">{entry.data.imageAlt}</figcaption>
+          <figcaption class="animate text-sm">{post.data.imageAlt}</figcaption>
         </figure>
       )
     }

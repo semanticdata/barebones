@@ -17,9 +17,9 @@ const iconClasses = `absolute top-1/2 -translate-y-1/2 stroke-2 ${isPrev ? "left
 ---
 
 {
-  post?.id ? (
+  post?.slug ? (
     <Button
-      href={`/blog/${post.id}`}
+      href={`/blog/${post.slug}`}
       variant="nav"
       group={true}
       class={additionalClasses}
