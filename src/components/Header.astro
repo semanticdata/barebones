@@ -3,21 +3,20 @@ import { NAV_LINKS, SITE } from "@siteConfig";
 import Button from "@components/Button.astro";
 ---
 
-<header class="mb-8 flex flex-col">
-  <a
+<header class="flex flex-col">
+  <Button
     href="/"
-    class="text-md my-4 size-9 h-fit w-fit rounded border border-black bg-black/5 px-2 py-1 font-medium text-black no-underline shadow-sm transition-colors duration-300 hover:bg-black hover:text-white focus:bg-black focus:text-white focus:outline-none focus:ring focus:ring-purple-900 focus:ring-offset-2 dark:border-white/50 dark:bg-white/5 dark:text-white dark:hover:bg-white dark:hover:text-black dark:focus:bg-white dark:focus:text-black dark:focus:ring-purple-900"
-    >{SITE.title}</a
-  >
+    variant="title"
+    >{SITE.title}</Button>
   <nav>
-    <ul class="flex list-none gap-2 p-0">
+    <ul class="flex flex-wrap list-none gap-2 p-0 flex-row">
       {
         Object.keys(NAV_LINKS).map((navItemKey) => {
           return (
             <li>
               <Button
                 href={NAV_LINKS[navItemKey].path}
-                style="text-decoration: none;"
+                variant="nav"
               >
                 {NAV_LINKS[navItemKey].label}
               </Button>
@@ -27,4 +26,6 @@ import Button from "@components/Button.astro";
       }
     </ul>
   </nav>
+
+  <hr class="animate my-6 border-[0.5px]" />
 </header>
