@@ -1,7 +1,7 @@
 ---
 title: Being a Firefighter Does Not Save You From Burnout
 description: "The last 18 months have changed me profoundly, and I feel like I need to write these feelings down."
-publicationDate: 2023-07-05
+pubDate: 2023-07-05
 image: ./cover-image.webp
 imageAlt: Walking Firefighter by Andrew Gaines.
 ---

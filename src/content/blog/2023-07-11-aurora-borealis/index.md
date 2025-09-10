@@ -1,7 +1,7 @@
 ---
 title: "Aurora Borealis Reference Guide"
 description: "July 12th, 2023, was supposed to feature high solar activity, allowing for an incredibly large area of the northern United States to witness the Auroras as long as the light pollution was low enough."
-publicationDate: 2023-07-11
+pubDate: 2023-07-11
 image: ./cover-image.webp
 imageAlt: Aurora Borealis by Serey Kim.
 ---

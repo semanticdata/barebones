@@ -3,7 +3,7 @@ title: "PomoBar for Obsidian"
 description: "The story behind creating a minimalist Pomodoro timer plugin for Obsidian that lives in your status bar."
 image: ./cover-image.jpg
 imageAlt: Photo by Ngo Ngoc Khai Huyen on Unsplash.
-publicationDate: 2025-08-17
+pubDate: "2025-08-17"
 ---
 
 After my ADHD diagnosis, the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) became essential for managing my focus. As someone who spends most of my day in [Obsidian](https://obsidian.md/), I wanted a timer that lived seamlessly within my note-taking environment without cluttering my workspace.

@@ -11,7 +11,7 @@ const posts = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .sort(
     (a, b) =>
-      b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf(),
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   );
 ---
 

@@ -15,23 +15,33 @@ export async function GET(context) {
       atom: "http://www.w3.org/2005/Atom",
     },
     customData: `<atom:link href="${context.site}rss.xml" rel="self" type="application/rss+xml" />`,
-    items: blog.map((post) => ({
-      title: post.data.title,
-      description: post.data.description,
-      pubDate: post.data.publicationDate,
-      link: `/blog/${post.slug}`,
-      content: sanitizeHtml(parser.render(post.body), {
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-      })
-        .replace(/href="\/([^"]*)/g, `href="${context.site}$1`)
-        .replace(/src="\/([^"]*)/g, `src="${context.site}$1`),
-      ...(post.data.image && {
-        enclosure: {
-          url: `${context.site}${post.data.image.src}`,
-          type: "image/webp",
-          length: 0,
-        },
-      }),
-    })),
+    items: blog.map((post) => {
+      // Generate image HTML if image exists
+      const imageHtml = post.data.image
+        ? `<img src="${context.site}${post.data.image.src}" alt="${post.data.imageAlt}" />`
+        : "";
+
+      return {
+        title: post.data.title,
+        description: post.data.description,
+        pubDate: post.data.pubDate,
+        link: `/blog/${post.slug}`,
+        content: sanitizeHtml(
+          imageHtml + parser.render(post.body), // prepend image to content
+          {
+            allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
+          }
+        )
+          .replace(/href="\/([^"]*)/g, `href="${context.site}$1`)
+          .replace(/src="\/([^"]*)/g, `src="${context.site}$1`),
+        ...(post.data.image && {
+          enclosure: {
+            url: `${context.site}${post.data.image.src}`,
+            type: "image/webp",
+            length: 0,
+          },
+        }),
+      };
+    }),
   });
 }

@@ -13,7 +13,7 @@ import TableOfContents from "@widgets/TableOfContents.astro";
 import PostNavigation from "@widgets/PostNavigation.astro";
 
 interface Props {
-  entry: CollectionEntry<"blog">;
+  post: CollectionEntry<"blog">;
 }
 
 export async function getStaticPaths() {
@@ -30,7 +30,7 @@ const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .sort(
     (a, b) =>
-      b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf(),
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   );
 
 function getNextPost() {

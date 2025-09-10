@@ -1,7 +1,7 @@
 ---
 title: "10 Fun Facts About the Dominican Republic"
 description: "Rediscovering my homeland after 8 years away - sharing the Dominican Republic through the eyes of someone who grew down there."
-publicationDate: 2024-09-12
+pubDate: 2024-09-12
 image: ./cover-image.webp
 imageAlt: Dominican flag by Ruddy Corporan.
 ---
