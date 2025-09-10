@@ -71,14 +71,17 @@ const { Content, headings } = await render(entry);
     {
       entry.data.image && (
         <Image
+          id="blog-post-image"
           src={entry.data.image}
           alt={entry.data.imageAlt || ""}
-          class="animate mb-4 h-auto w-full rounded shadow-md dark:shadow-white/15"
+          class="animate h-auto w-full rounded shadow-md dark:shadow-white/15"
           loading="eager"
           decoding="async"
           width="608"
           height="405"
         />
+        <label class="animate text-sm"
+          >{entry.data.imageAlt}</label>
       )
     }
 
