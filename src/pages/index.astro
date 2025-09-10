@@ -47,7 +47,7 @@ const posts = (await getCollection("blog"))
     <section class="animate mb-8">
       <h2 class="mb-3 text-lg font-bold">Blog posts</h2>
       <ul class="mb-8 grid list-none gap-2 p-0">
-          {posts.slice(0, 8).map((post) => <Post post={post} />)}
+        {posts.slice(0, 8).map((post) => <Post post={post} />)}
       </ul>
       <Button href="/blog" variant="link">More posts</Button>
     </section>

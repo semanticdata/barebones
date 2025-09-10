@@ -4,20 +4,14 @@ import Button from "@components/Button.astro";
 ---
 
 <header class="flex flex-col">
-  <Button
-    href="/"
-    variant="title"
-    >{SITE.title}</Button>
+  <Button href="/" variant="title">{SITE.title}</Button>
   <nav>
-    <ul class="flex flex-wrap list-none gap-2 p-0 flex-row">
+    <ul class="flex list-none flex-row flex-wrap gap-2 p-0">
       {
         Object.keys(NAV_LINKS).map((navItemKey) => {
           return (
             <li>
-              <Button
-                href={NAV_LINKS[navItemKey].path}
-                variant="nav"
-              >
+              <Button href={NAV_LINKS[navItemKey].path} variant="nav">
                 {NAV_LINKS[navItemKey].label}
               </Button>
             </li>
