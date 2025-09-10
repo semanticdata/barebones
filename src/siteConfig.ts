@@ -1,8 +1,4 @@
-import type {
-  SiteConfiguration,
-  NavigationLinks,
-  SocialLinks,
-} from "@/types";
+import type { SiteConfiguration, NavigationLinks, SocialLinks } from "@/types";
 
 export const SITE: SiteConfiguration = {
   title: "MiguelPimentel.do",

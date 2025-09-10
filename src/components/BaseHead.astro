@@ -1,7 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import { SITE } from "@siteConfig";
-
 ---
 
 <head>
@@ -56,11 +55,11 @@ import { SITE } from "@siteConfig";
   </noscript>
 
   <ClientRouter />
-  
+
   <script>
     import { initThemeScript } from "@lib/themeInit";
     import { initCopyCode } from "@lib/copyCodeInit";
-    
+
     initThemeScript();
     initCopyCode();
   </script>
