@@ -22,6 +22,14 @@ export async function GET(context) {
       link: `/blog/${post.id}`,
       content: sanitizeHtml(parser.render(post.body), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
+      }).replace(/href="\/([^"]*)/g, `href="${context.site}$1`)
+        .replace(/src="\/([^"]*)/g, `src="${context.site}$1`),
+      ...(post.data.image && {
+        enclosure: {
+          url: `${context.site}${post.data.image.src}`,
+          type: "image/webp",
+          length: 0,
+        },
       }),
     })),
   });
