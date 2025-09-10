@@ -34,13 +34,13 @@ Sometimes a problem feels bigger than what I can hold in my head all at once. Th
 
 If I have too much swirling around mentally, I do a brain dump straight into Obsidian. No organization, no structure – just everything that's bouncing around in my head gets typed out in my daily journal. Once external, I can see patterns and priorities that were invisible when everything was just competing for mental space.
 
-For complex technical problems or big decisions, I *still* reach for pen and paper. There's something about the physical act of writing that slows down my thinking in a good way. Digital tools are great for capturing and organizing, but when I really need to work through something step by step, handwriting forces me to be more deliberate.
+For complex technical problems or big decisions, I _still_ reach for pen and paper. There's something about the physical act of writing that slows down my thinking in a good way. Digital tools are great for capturing and organizing, but when I really need to work through something step by step, handwriting forces me to be more deliberate.
 
 When I'm procrastinating or jumping between tasks without making progress, I use pomodoro timers to create structure. I actually built [PomoBar](https://github.com/semanticdata/obsidian-pomodoro) as an Obsidian plugin because I needed a timer that stayed out of my way but was available when natural flow breaks down. Pen and paper is my backup plan when everything else stops working.
 
 ## What Doesn't Work
 
-Here's what I've learned about my ADHD brain and traditional productivity advice: most of it assumes a neurotypical brain that operates on predictable schedules and *consistent motivation levels*.
+Here's what I've learned about my ADHD brain and traditional productivity advice: most of it assumes a neurotypical brain that operates on predictable schedules and _consistent motivation levels_.
 
 My motivation fluctuates throughout the day in ways I can't predict or control. Some mornings I wake up with laser focus and can tackle complex problems for hours. Other days, I struggle to concentrate on simple tasks until later in the day. The emotional rollercoaster is real! Rigid scheduling that doesn't account for these natural fluctuations just sets me up for failure and frustration.
 
