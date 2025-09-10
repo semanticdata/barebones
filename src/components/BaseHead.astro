@@ -1,8 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import { SITE } from "@/siteConfig";
+import { SITE } from "@siteConfig";
 
-import HeadScript from "@/components/HeadScript.astro";
 ---
 
 <head>
@@ -57,7 +56,14 @@ import HeadScript from "@/components/HeadScript.astro";
   </noscript>
 
   <ClientRouter />
-  <HeadScript />
+  
+  <script>
+    import { initThemeScript } from "@lib/themeInit";
+    import { initCopyCode } from "@lib/copyCodeInit";
+    
+    initThemeScript();
+    initCopyCode();
+  </script>
 
   <slot />
 

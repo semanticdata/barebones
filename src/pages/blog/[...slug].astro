@@ -3,14 +3,14 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import { render } from "astro:content";
 
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
-import { formatDate } from "@/lib/util";
+import { formatDate } from "@lib/util";
 
-import Seo from "@/components/Seo.astro";
-import TableOfContents from "@/components/TableOfContents.astro";
-import Footer from "@/components/Footer.astro";
-import PostNavigation from "@/components/PostNavigation.astro";
+import Seo from "@components/Seo.astro";
+import Footer from "@components/Footer.astro";
+import TableOfContents from "@widgets/TableOfContents.astro";
+import PostNavigation from "@widgets/PostNavigation.astro";
 
 interface Props {
   entry: CollectionEntry<"blog">;

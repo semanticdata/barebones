@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
-import Post from "@/components/Post.astro";
-import Seo from "@/components/Seo.astro";
-import Footer from "@/components/Footer.astro";
+import Post from "@components/Post.astro";
+import Seo from "@components/Seo.astro";
+import Footer from "@components/Footer.astro";
 
 const posts = (await getCollection("blog"))
   .filter((post) => !post.data.draft)

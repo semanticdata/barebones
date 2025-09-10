@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
-import Project from "@/components/Project.astro";
-import Seo from "@/components/Seo.astro";
-import Footer from "@/components/Footer.astro";
+import Project from "@components/Project.astro";
+import Seo from "@components/Seo.astro";
+import Footer from "@components/Footer.astro";
 
 const projects = (await getCollection("projects")).sort((b, a) =>
   b.data.title.localeCompare(a.data.title),

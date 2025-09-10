@@ -1,5 +1,5 @@
 import type { MarkdownHeading } from "astro";
-import { SITE } from "@/siteConfig";
+import { SITE } from "@siteConfig";
 
 export type HeadingWithSubheadings = MarkdownHeading & {
   subheadings: MarkdownHeading[];
