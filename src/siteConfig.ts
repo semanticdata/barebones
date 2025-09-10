@@ -18,10 +18,10 @@ export const NAV_LINKS: NavigationLinks = {
     path: "/blog",
     label: "Blog",
   },
-  // projects: {
-  //   path: "/projects",
-  //   label: "Projects",
-  // },
+  projects: {
+    path: "/projects",
+    label: "Projects",
+  },
   now: {
     path: "https://database.omg.lol/now",
     label: "Now",
