@@ -26,6 +26,10 @@ export const NAV_LINKS: NavigationLinks = {
     path: "/projects",
     label: "Projects",
   },
+  now: {
+    path: "https://database.omg.lol/now",
+    label: "Now",
+  },
   contact: {
     path: "/uses",
     label: "Uses",

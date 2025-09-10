@@ -70,15 +70,19 @@ const { Content, headings } = await render(entry);
   <div>
     {
       entry.data.image && (
-        <Image
-          src={entry.data.image}
-          alt={entry.data.imageAlt || ""}
-          class="animate mb-4 h-auto w-full rounded shadow-md dark:shadow-white/15"
-          loading="eager"
-          decoding="async"
-          width="608"
-          height="405"
-        />
+        <figure>
+          <Image
+            id="blog-post-image"
+            src={entry.data.image}
+            alt={entry.data.imageAlt || ""}
+            class="animate h-auto w-full rounded shadow-md dark:shadow-white/15"
+            loading="eager"
+            decoding="async"
+            width="608"
+            height="405"
+          />
+          <figcaption class="animate text-sm">{entry.data.imageAlt}</figcaption>
+        </figure>
       )
     }
 
