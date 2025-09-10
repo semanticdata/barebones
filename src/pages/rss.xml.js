@@ -53,12 +53,8 @@ export async function GET(context) {
           if (imagePath.startsWith('/')) return `src=${quote}${context.site}${imagePath}${quote}`;
           return `src=${quote}${context.site}/blog/${post.slug}/${imagePath}${quote}`;
         });
-      // Post-process: replace any escaped tables with plaintext
-      content = content.replace(/&lt;table[^&]*&gt;[\s\S]*?&lt;\/table&gt;/gi, (match) => {
-        // Unescape HTML entities for tags
-        const htmlTable = match.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-        return markdownTableToText(htmlTable);
-      });
+      // Convert escaped HTML entities back to real HTML tags
+      content = content.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
       return {
         title: post.data.title,
         description: post.data.description,
