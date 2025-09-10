@@ -30,9 +30,7 @@ const socialLinksArray: SocialLink[] = Object.keys(SOCIAL_LINKS).map((key) => ({
                 ? link.label === "Mastodon"
                   ? "me"
                   : "noopener noreferrer"
-                : link.label === "Mastodon"
-                  ? "me"
-                  : undefined
+                : undefined
             }
           >
             {link.label}
