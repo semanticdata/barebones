@@ -32,8 +32,18 @@ export async function GET(context) {
             allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
           },
         )
+          // Replace href="/..." and src="/..." with absolute URLs
           .replace(/href="\/([^"]*)/g, `href="${context.site}$1`)
-          .replace(/src="\/([^"]*)/g, `src="${context.site}$1`),
+          .replace(/src="\/([^"]*)/g, `src="${context.site}$1`)
+          // Replace src="relative-path.webp" with absolute URLs (for images in markdown)
+          .replace(/src="([^"]+\.(?:webp|jpg|jpeg|png|gif))"/g, (match, p1) => {
+            // If already absolute, leave as is
+            if (/^https?:\/\//.test(p1)) return match;
+            // If already starts with context.site, leave as is
+            if (p1.startsWith(context.site)) return match;
+            // Otherwise, prepend site and blog slug
+            return `src="${context.site}/blog/${post.slug}/${p1}"`;
+          }),
         ...(post.data.image && {
           enclosure: {
             url: `${context.site}${post.data.image.src}`,
