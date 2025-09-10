@@ -9,11 +9,11 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<li class="flex flex-col no-underline sm:flex-row sm:justify-between">
+<li class="flex flex-col sm:flex-row sm:justify-between">
   <a href={`/blog/${post.slug}`}>
-    <span>{post.data.title}</span>
+    {post.data.title}
   </a>
-  <div class="text-lightModeForegroundMuted dark:text-darkModeForegroundMuted">
+  <span class="text-lightModeForegroundMuted dark:text-darkModeForegroundMuted">
     {formatDate(post.data.pubDate)}
-  </div>
+  </span>
 </li>
