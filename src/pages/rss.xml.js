@@ -21,7 +21,7 @@ export async function GET(context) {
         ? `<img src="${context.site}${post.data.image.src}" alt="${post.data.imageAlt}" />`
         : "";
 
-  let content = imageHtml + parser.render(post.body);
+      let content = imageHtml + parser.render(post.body);
       content = sanitizeHtml(content, {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
       })
@@ -29,15 +29,19 @@ export async function GET(context) {
         .replace(/href="\/([^"]*)/g, `href="${context.site}$1`)
         .replace(/src="\/([^"]*)/g, `src="${context.site}$1`)
         // Replace all relative image references with absolute URLs
-        .replace(/src=(\["']?)([^"'\s>]+\.(?:webp|jpg|jpeg|png|gif|svg))\1/gi, (match, quote, imagePath) => {
-          // If already absolute, leave as is
-          if (/^https?:\/+/.test(imagePath)) return match;
-          if (imagePath.startsWith(context.site)) return match;
-          if (imagePath.startsWith('/')) return `src=${quote}${context.site}${imagePath}${quote}`;
-          return `src=${quote}${context.site}/blog/${post.slug}/${imagePath}${quote}`;
-        });
+        .replace(
+          /src=(\["']?)([^"'\s>]+\.(?:webp|jpg|jpeg|png|gif|svg))\1/gi,
+          (match, quote, imagePath) => {
+            // If already absolute, leave as is
+            if (/^https?:\/+/.test(imagePath)) return match;
+            if (imagePath.startsWith(context.site)) return match;
+            if (imagePath.startsWith("/"))
+              return `src=${quote}${context.site}${imagePath}${quote}`;
+            return `src=${quote}${context.site}/blog/${post.slug}/${imagePath}${quote}`;
+          },
+        );
       // Convert escaped HTML entities back to real HTML tags
-      content = content.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+      content = content.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
       return {
         title: post.data.title,
         description: post.data.description,
