@@ -5,23 +5,6 @@ import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
 
-function markdownTableToText(md) {
-  // More robust regex to match tables with attributes/whitespace
-  return md.replace(/<table[^>]*>[\s\S]*?<\/table>/gi, (match) => {
-    // Remove thead/tbody tags
-    let tableContent = match.replace(/<\/?(table|thead|tbody)[^>]*>/gi, "");
-    // Extract rows
-    const rows = [...tableContent.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)];
-    return rows
-      .map(([, row]) => {
-        // Extract cells
-        const cells = [...row.matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi)];
-        return cells.map(([, cell]) => cell.trim()).join(" | ");
-      })
-      .join("\n");
-  });
-}
-
 export async function GET(context) {
   const blog = await getCollection("blog");
   return rss({
@@ -38,7 +21,7 @@ export async function GET(context) {
         ? `<img src="${context.site}${post.data.image.src}" alt="${post.data.imageAlt}" />`
         : "";
 
-      let content = imageHtml + markdownTableToText(parser.render(post.body));
+  let content = imageHtml + parser.render(post.body);
       content = sanitizeHtml(content, {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
       })
