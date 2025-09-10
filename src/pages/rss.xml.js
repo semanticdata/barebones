@@ -30,13 +30,9 @@ export async function GET(context) {
         .replace(/src="\/([^"]*)/g, `src="${context.site}$1`)
         // Replace all relative image references with absolute URLs
         .replace(
-          /src=(\["']?)([^"'\s>]+\.(?:webp|jpg|jpeg|png|gif|svg))\1/gi,
+          /src=(\"|')(?!https?:\/|\/)([^"'\s>]+\.(?:webp|jpg|jpeg|png|gif|svg))\1/gi,
           (match, quote, imagePath) => {
-            // If already absolute, leave as is
-            if (/^https?:\/+/.test(imagePath)) return match;
-            if (imagePath.startsWith(context.site)) return match;
-            if (imagePath.startsWith("/"))
-              return `src=${quote}${context.site}${imagePath}${quote}`;
+            // Only match relative paths (not starting with http or /)
             return `src=${quote}${context.site}/blog/${post.slug}/${imagePath}${quote}`;
           },
         );
