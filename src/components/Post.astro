@@ -14,6 +14,6 @@ const { post } = Astro.props;
     <span>{post.data.title}</span>
   </a>
   <div class="text-lightModeForegroundMuted dark:text-darkModeForegroundMuted">
-    {formatDate(post.data.publicationDate)}
+    {formatDate(post.data.pubDate)}
   </div>
 </li>

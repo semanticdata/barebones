@@ -61,7 +61,7 @@ const { Content, headings } = await render(post);
   <Seo slot="head" post={post} />
   <h1 class="animate">{post.data.title}</h1>
   <p class="animate">
-    {formatDate(post.data.publicationDate)}
+    {formatDate(post.data.pubDate)}
   </p>
   <hr class="animate my-8" />
   <div>
