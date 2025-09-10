@@ -31,15 +31,17 @@ const baseClasses = [
   "dark:border-white/50 dark:bg-white/5 dark:hover:bg-white dark:focus-visible:bg-white/5",
   "text-black hover:text-white focus-visible:text-black",
   "dark:text-white dark:hover:text-black dark:focus-visible:text-white",
+  "focus:ring focus:ring-purple-900 dark:focus:ring-purple-900 focus:ring-offset-2 focus:outline-none",
 ].join(" ");
 
 // Variant-specific classes
 const variantClasses = {
   primary:
-    "font-medium px-4 py-2 my-4 w-fit h-fit shadow-sm focus:ring focus:ring-purple-900 dark:focus:ring-purple-900 focus:ring-offset-2 focus:outline-none",
-  nav: "flex flex-nowrap px-4 py-3 no-underline",
+    "focus:ring focus:ring-purple-900 dark:focus:ring-purple-900 focus:ring-offset-2 focus:outline-none",
   icon: "flex size-9 items-center justify-center",
   link: "inline-flex px-2 py-1 no-underline font-medium",
+  title: "no-underline flex flex-nowrap w-fit h-fit py-1 px-2 mb-2",
+  nav: "flex px-2 py-1 no-underline",
 } as const;
 
 // Size classes
