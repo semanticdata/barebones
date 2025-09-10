@@ -9,10 +9,7 @@ import Footer from "@components/Footer.astro";
 
 const posts = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
-  .sort(
-    (a, b) =>
-      b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-  );
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <BaseLayout>

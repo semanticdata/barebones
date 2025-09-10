@@ -30,7 +30,7 @@ export async function GET(context) {
           imageHtml + parser.render(post.body), // prepend image to content
           {
             allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-          }
+          },
         )
           .replace(/href="\/([^"]*)/g, `href="${context.site}$1`)
           .replace(/src="\/([^"]*)/g, `src="${context.site}$1`),
