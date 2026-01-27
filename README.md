@@ -11,7 +11,6 @@ My personal website and blog built with [Astro](https://astro.build/). Features 
 - 🔍 **SEO Optimized** - Meta tags and structured data
 - 📰 **RSS Feed** - Automatic RSS generation
 - 🗺️ **Sitemap** - Automatic sitemap generation
-- 📊 **Analytics Ready** - Privacy-focused analytics setup
 - 🎨 **Tailwind CSS** - For styling and rapid development
 
 ### Changes from Upstream
@@ -35,4 +34,4 @@ My personal website and blog built with [Astro](https://astro.build/). Features 
 - [Prettier](https://prettier.io/) - For code formatting
 - [ESLint](https://eslint.org/) - For linting
 - [Vercel](https://vercel.com/) - For hosting
-- [Umami](https://umami.is/) - For analytics
+

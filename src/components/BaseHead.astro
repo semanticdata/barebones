@@ -65,15 +65,4 @@ import { SITE } from "@siteConfig";
   </script>
 
   <slot />
-
-  {
-    import.meta.env.PROD && (
-      <script
-        is:inline
-        defer
-        src="https://umami.itscattime.com/script.js"
-        data-website-id="318e1daa-1e0a-4708-91ff-27284b592659"
-      />
-    )
-  }
 </head>
